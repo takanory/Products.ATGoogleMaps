@@ -1,0 +1,30 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    i18n_domain="Products.ATGoogleMaps">
+
+  <!-- configure your content components here -->
+  
+  <!-- -*- extra stuff goes here -*- -->
+  <class class=".gmarker.GMarker">
+    <require
+        permission="zope2.View"
+        interface="..interfaces.IGMarker"
+        />
+    <require
+        permission="cmf.ModifyPortalContent"
+        set_schema="..interfaces.IGMarker"
+        />
+  </class>
+  <class class=".gmap.GMap">
+    <require
+        permission="zope2.View"
+        interface="..interfaces.IGMap"
+        />
+    <require
+        permission="cmf.ModifyPortalContent"
+        set_schema="..interfaces.IGMap"
+        />
+  </class>
+
+</configure>
