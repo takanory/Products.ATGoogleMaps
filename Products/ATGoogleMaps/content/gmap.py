@@ -30,7 +30,7 @@ schemata.finalizeATCTSchema(
 )
 
 class GMap(folder.ATFolder):
-    """A Google Map Type"""
+    """Google Maps Type"""
     implements(IGMap)
 
     meta_type = "GMap"

@@ -36,7 +36,7 @@ tests_require=['zope.testing']
 
 setup(name='Products.ATGoogleMaps',
       version=version,
-      description="ATContentTypes-based Google Maps product.",
+      description="ATContentTypes-based Google Maps product for Plone.",
       long_description=long_description,
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[

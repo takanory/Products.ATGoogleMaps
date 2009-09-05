@@ -4,7 +4,7 @@
    i18n:domain="Products.ATGoogleMaps" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
   <property name="title" i18n:translate="">GMap</property>
   <property name="description"
-    i18n:translate="">A Google Map Type</property>
+    i18n:translate="">Google Maps Type</property>
   <property name="content_meta_type">GMap</property>
   <property name="content_icon">folder_icon.gif</property>
   <property name="product">Products.ATGoogleMaps</property>

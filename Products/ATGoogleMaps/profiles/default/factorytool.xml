@@ -12,6 +12,5 @@
     <!-- -*- extra stuff goes here -*- -->
     <type portal_type="GMarker" />
     <type portal_type="GMap" />
-    <type portal_type="A Google Map type" />
   </factorytypes>
 </object>

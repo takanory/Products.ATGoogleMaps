@@ -26,7 +26,7 @@ GMarkerSchema['description'].storage = atapi.AnnotationStorage()
 schemata.finalizeATCTSchema(GMarkerSchema, moveDiscussion=False)
 
 class GMarker(base.ATCTContent):
-    """A Goole Marker Type"""
+    """Google Maps Marker Type"""
     implements(IGMarker)
 
     meta_type = "GMarker"

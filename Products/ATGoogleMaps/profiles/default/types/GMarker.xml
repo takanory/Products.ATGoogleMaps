@@ -4,7 +4,7 @@
    i18n:domain="Products.ATGoogleMaps" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
   <property name="title" i18n:translate="">GMarker</property>
   <property name="description"
-    i18n:translate="">A Goole Marker Type</property>
+    i18n:translate="">Google Maps Marker Type</property>
   <property name="content_meta_type">GMarker</property>
   <property name="content_icon">document_icon.gif</property>
   <property name="product">Products.ATGoogleMaps</property>
