@@ -1,0 +1,298 @@
+# takanori <takanori@takanory.net>, 2006.
+msgid ""
+msgstr ""
+"Project-Id-Version: ATGoogleMaps\n"
+"POT-Creation-Date: 2006-08-21 23:41+0900\n"
+"PO-Revision-Date: 2006-08-21 23:46+0900\n"
+"Last-Translator: takanori <takanori@takanory.net>\n"
+"Language-Team: takanory.net [http://takanory.net]\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: ja\n"
+"Language-Name: Japanese\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: googlemaps\n"
+"X-Is-Fallback-For: ja-jp\n"
+
+#. Default: "Latitude"
+#: ./skins/googlemaps/latlng_widget.py
+msgid "label_latitude"
+msgstr "緯度"
+
+#. Default: "Longitude"
+#: ./skins/googlemaps/latlng_widget.py
+msgid "label_longitude"
+msgstr "経度"
+
+#. Default: "Enter the address or the landmark. A center point in this map is set as a latitude and longitude."
+#: ./skins/googlemaps/latlng_widget.py
+msgid "help_latlng_map"
+msgstr "住所やランドマークを入力して検索できます。地図の中心点が緯度経度として設定されます。"
+
+#. Default: "View in Google Earth"
+#: ./skins/googlemaps/gmap_view.pt
+msgid "view_google_earth"
+msgstr "Google Earth で表示"
+
+#. Default: "View larger map"
+#: ./skins/googlemaps/gmarker_view.pt
+msgid "label_larger_map"
+msgstr "拡大地図を表示"
+
+#. Default: "Google Maps API Key settings for this site."
+#: ./skins/googlemaps/prefs_gmap_form.cpt
+msgid "description_atgooglemaps_settings"
+msgstr "このサイト用の Google Maps API Key を設定してください。"
+
+#. Default: "ATGoogleMaps details"
+#: ./skins/googlemaps/prefs_gmap_form.cpt
+msgid "legend_atgooglemaps_details"
+msgstr "ATGoogleMaps の詳細"
+
+#. Default: "Google Maps API Key"
+#: ./skins/googlemaps/prefs_gmap_form.cpt
+msgid "label_api_key"
+msgstr "Google Maps API Key"
+
+#. Default: "Access a sign up page, and please generate API Key."
+#: ./skins/googlemaps/prefs_gmap_form.cpt
+msgid "help_api_key"
+msgstr "ページにアクセスして API Key を生成してください。"
+
+#. Default: "Google Maps Server"
+#: ./content/GMap.py
+msgid "label_server"
+msgstr "Google マップサーバ"
+
+#. Default: "Select a Google Maps server to use."
+#: ./content/GMap.py
+msgid "help_server"
+msgstr "使用する Google マップのサーバを選択します。"
+
+#. Default: "Height"
+#: ./content/GMap.py
+msgid "label_height"
+msgstr "高さ"
+
+#. Default: "Height(pixel) of this map."
+#: ./content/GMap.py
+msgid "help_height"
+msgstr "表示する地図の高さを pixel で指定してします。"
+
+#. Default: "Center"
+#: ./content/GMap.py
+msgid "label_center"
+msgstr "中心座標"
+
+#. Default: "Center of this map."
+#: ./content/GMap.py
+#. latitude
+msgid "help_center"
+msgstr "地図の中心点となる位置の座標を指定してください。"
+
+#. Default: "Zoom"
+#: ./content/GMap.py
+msgid "label_zoom"
+msgstr "縮尺"
+
+#. Default: "Select a zoom level."
+#: ./content/GMap.py
+msgid "help_zoom"
+msgstr "地図の縮尺を指定します。数字が大きいほうがより詳細な地図になります。"
+
+#. Default: "Map Control"
+#: ./content/GMap.py
+msgid "label_map_control"
+msgstr "地図の制御パネル"
+
+#. Default: "Select a direction and zoom control type."
+#: ./content/GMap.py
+msgid "help_map_control"
+msgstr "地図を制御するパネル"
+
+#. Default: "large"
+#: ./content/GMap.py
+msgid "large"
+msgstr "サイズ大"
+
+#. Default: "small"
+#: ./content/GMap.py
+msgid "small"
+msgstr "サイズ小"
+
+#. Default: "nothing"
+#: ./content/GMap.py
+msgid "nothing"
+msgstr "表示なし"
+
+#. Default: "Map Type"
+#: ./content/GMap.py
+msgid "label_map_type"
+msgstr "地図の種類"
+
+#. Default: "Select a default map type."
+#: ./content/GMap.py
+msgid "help_map_type"
+msgstr "表示する画像の種類を地図またはサテライトから選択します。"
+
+#. Default: "map"
+#: ./content/GMap.py
+msgid "map"
+msgstr "地図"
+
+#. Default: "satellite"
+#: ./content/GMap.py
+msgid "satellite"
+msgstr "衛星写真"
+
+#. Default: "Display Type Control"
+#: ./content/GMap.py
+msgid "label_type_control"
+msgstr "マップ切替ボタンを表示"
+
+#. Default: "If checked, Select a default map type."
+#: ./content/GMap.py
+msgid "help_type_control"
+msgstr "「地図」と「衛星画像」を切り替えるためのボタンを表示しない場合は、チェックをはずします。"
+
+#. Default: "Display Scale Control"
+#: ./content/GMap.py
+msgid "label_scale_control"
+msgstr "スケールを表示"
+
+#. Default: ""
+#: ./content/GMap.py
+msgid "help_scale_control"
+msgstr "左下にスケールを表示しない場合は、チェックをはずします。"
+
+#. Default: "Display Overview Control"
+#: ./content/GMap.py
+msgid "label_overview_control"
+msgstr "オーバービュー地図を表示"
+
+#. Default: ""
+#: ./content/GMap.py
+msgid "help_overview_control"
+msgstr "右下にオーバービュー地図を表示しない場合は、チェックをはずします。"
+
+#. Default: "Address"
+#: ./content/GMarker.py
+msgid "label_address"
+msgstr "住所"
+
+#. Default: ""
+#: ./content/GMarker.py
+msgid "help_address"
+msgstr ""
+
+#. Default: "Phone"
+#: ./content/GMarker.py
+msgid "label_phone"
+msgstr "電話番号"
+
+#. Default: ""
+#: ./content/GMarker.py
+msgid "help_phone"
+msgstr ""
+
+#. Default: "URL"
+#: ./content/GMarker.py
+msgid "label_url"
+msgstr "URL"
+
+#. Default: ""
+#: ./content/GMarker.py
+msgid "help_url"
+msgstr ""
+
+#. Default: "Image URL"
+#: ./content/GMarker.py
+msgid "label_image_url"
+msgstr "画像のURL"
+
+#. Default: ""
+#: ./content/GMarker.py
+msgid "help_image_url"
+msgstr ""
+
+#. Default: "Image URL"
+#: ./content/GMarker.py
+msgid "label_point"
+msgstr "マーカー位置"
+
+#. Default: ""
+#: ./content/GMarker.py
+msgid "help_point"
+msgstr "このマーカーの座標を指定してください。"
+
+#. Default: "Detail"
+#: ./content/GMarker.py
+msgid "label_detail"
+msgstr "詳細"
+
+#. Default: ""
+#: ./content/GMarker.py
+msgid "help_detail"
+msgstr ""
+
+#. Default: "Tab #1 title"
+#: ./content/GMarker.py
+msgid "label_tab1"
+msgstr "1番目のタブのタイトル"
+
+#. Default: ""
+#: ./content/GMarker.py
+msgid "help_tab1"
+msgstr ""
+
+#. Default: "Tab #2 title"
+#: ./content/GMarker.py
+msgid "label_tab2"
+msgstr "2番目のタブのタイトル"
+
+#. Default: ""
+#: ./content/GMarker.py
+msgid "help_tab2"
+msgstr ""
+
+#. Default: "Points"
+#: ./content/GPolyline.py
+msgid "label_points"
+msgstr "座標のリスト"
+
+#. Default: "Creates a polyline from an array of points."
+#: ./content/GPolyline.py
+msgid "help_points"
+msgstr "折れ線の各点の座標を入力してください"
+
+#. Default: "Color"
+#: ./content/GPolyline.py
+msgid "label_color"
+msgstr "色"
+
+#. Default: "Enter the color in hexadecimal numeric HTML style, i.e. #RRGGBB."
+#: ./content/GPolyline.py
+msgid "help_color"
+msgstr "線の色を16進数のHTML形式で入力してください。(例: #FF0000)"
+
+#. Default: "Width"
+#: ./content/GPolyline.py
+msgid "label_width"
+msgstr "幅"
+
+#. Default: "Select a width of the line in pixels."
+#: ./content/GPolyline.py
+msgid "help_width"
+msgstr "線の幅をピクセル数で指定してください。"
+
+#. Default: "Opacity"
+#: ./content/GPolyline.py
+msgid "label_opacity"
+msgstr "半透明処理"
+
+#. Default: ""
+#: ./content/GPolyline.py
+msgid "help_opacity"
+msgstr ""

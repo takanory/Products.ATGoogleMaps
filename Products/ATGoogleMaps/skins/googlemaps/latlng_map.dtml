@@ -1,0 +1,41 @@
+<script type="text/javascript">
+//<![CDATA[
+var gLocalSearch;
+var map;
+window.onload = function() {
+    if (GBrowserIsCompatible()) {
+<dtml-if "latitude != '0.0'">
+        map = createMap('map', <dtml-var "latitude">, <dtml-var "longitude">, 14);
+<dtml-else>
+        map = createMap('map');
+</dtml-if>
+	GEvent.addListener(map, "moveend", function() {
+	    var latlng = map.getCenter();
+	    var lat = Math.round(latlng.lat() * 1000000) / 1000000;
+	    var lng = Math.round(latlng.lng() * 1000000) / 1000000;
+	    document.edit_form["&dtml-fieldName;.latitude:record:ignore_empty"].value = lat;
+	    document.edit_form["&dtml-fieldName;.longitude:record:ignore_empty"].value = lng;
+	});
+        addCenterMarker(map);
+
+    }
+}
+
+gLocalSearch = new GlocalSearch();
+gLocalSearch.setSearchCompleteCallback(null, onLocalSearch);
+
+function search() {
+    gLocalSearch.setCenterPoint(map);
+    gLocalSearch.execute(document.getElementById('q').value)
+}
+
+function onLocalSearch() {
+    if(gLocalSearch.results.length > 0){
+	map.setCenter(new GLatLng(gLocalSearch.results[0].lat,gLocalSearch.results[0].lng), 14);
+    }
+    else{
+	window.alert("Not found.");
+    }
+}
+//]]>
+</script>

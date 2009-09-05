@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.or
+g/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      i18n:domain="plone">
+
+<body>
+
+<!-- Latitude and Longitude Widgets -->
+<metal:view_macro define-macro="view"
+                  tal:replace="structure accessor" />
+
+<metal:define define-macro="edit">
+  <metal:use use-macro="field_macro | here/widgets/field/macros/edit">
+    <metal:fill metal:fill-slot="widget_body">
+
+      <tal:block tal:define="latitude value/latitude | string:0.0;
+			     longitude value/longitude | string:0.0;
+			     server here/server | here/aq_parent/server | string:maps.google.com">
+
+	<script type="text/javascript" src=""
+		tal:attributes="src string:http://$server/maps?file=api&v=2&key=${here/portal_properties/gmap_properties/api_key}">
+	</script>
+	<script type="text/javascript" src=""
+		tal:attributes="src string:http://www.google.com/uds/api?file=uds.js&amp;v=0.1&amp;key=${here/portal_properties/gmap_properties/api_key}">
+	</script>
+
+	<script type="text/javascript" src=""
+		tal:attributes="src string:$portal_url/atgooglemaps.js">
+	</script>
+	<span tal:replace="structure here/latlng_map" />
+      
+	<label for="latitude"
+               i18n:domain="googlemaps"
+               i18n:translate="label_latitude">Latitude</label>
+
+	<input type="text"
+               name=""
+               value=""
+               size="12"
+               tabindex="#"
+               tal:attributes="name string:${fieldName}.latitude:record:ignore_empty;
+                               value latitude;
+                               size widget/size;
+                               maxlength widget/maxlength;
+                               tabindex tabindex/next;"
+               />
+	
+	<label for="longitude"
+               i18n:domain="googlemaps"
+               i18n:translate="label_longitude">Longitude</label>
+
+	<input type="text"
+               name=""
+               value=""
+               size="12"
+               tabindex="#"
+               tal:attributes="name string:${fieldName}.longitude:record:ignore_empty;
+                               value longitude;
+                               size widget/size;
+                               maxlength widget/maxlength;
+                               tabindex tabindex/next;"
+               />
+
+	<div class="formHelp" id="latlng_map_help"
+	     i18n:domain="googlemaps"
+	     i18n:translate="help_latlng_map">
+	  Enter the address or the landmark.
+	  A center point in this map is set as a latitude and longitude.
+	</div>
+
+        <input type="text" size="50" id="q"/>
+        <input class="standalone" type="button" id="s"
+	       value="Search"
+	       tabindex=""
+	       onclick="search();"
+	       i18n:domain="plone"
+	       i18n:attributes="value label_search;"
+	       tal:attributes="tabindex tabindex/next;"
+	       />
+
+        <div id="map" style="height: 300px; width: 400px;">
+        </div>
+
+      </tal:block>
+    </metal:fill>
+  </metal:use>
+</metal:define>
+
+<div metal:define-macro="search">
+  <div metal:use-macro="here/widgets/string/macros/edit" />
+</div>
+
+</body>
+
+</html>

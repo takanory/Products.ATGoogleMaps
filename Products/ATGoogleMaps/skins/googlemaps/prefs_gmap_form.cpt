@@ -1,0 +1,91 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/prefs_main_template/macros/master"
+      i18n:domain="googlemaps">
+
+<metal:block fill-slot="top_slot"
+             tal:define="dummy python:request.set('disable_border',1)" />
+
+<body>
+
+<div metal:fill-slot="prefs_configlet_main"
+     tal:define="errors options/state/getErrors;">
+
+    <h1 i18n:domain="plone" i18n:translate="ATGoogleMaps Settings">
+      ATGoogleMaps Settings
+    </h1>
+
+    <a href=""
+       class="link-parent"
+       tal:attributes="href string: $portal_url/plone_control_panel"
+       i18n:domain="plone"
+       i18n:translate="label_up_to_plone_setup">
+    Up to Site Setup
+    </a>
+
+    <p class="documentDescription" 
+       i18n:translate="description_atgooglemaps_settings">
+        Google Maps API Key settings for this site.
+    </p>
+
+    <form action=""
+          name="atgooglemaps"
+          method="post"
+          class="enableUnloadProtection"
+          tal:attributes="action string:${here_url}/${template_id}">
+
+        <fieldset>
+            <legend i18n:translate="legend_atgooglemaps_details">ATGoogleMaps details</legend>
+    
+            <div class="field"
+                 tal:define="api_key request/api_key | here/portal_properties/gmap_properties/api_key;
+                             error errors/api_key | nothing;"
+                 tal:attributes="class python:test(error, 'field error', 'field')">
+
+                <label i18n:translate="label_api_key">Google Maps API Key</label>
+    
+                <span class="fieldRequired" title="Required"
+		      i18n:domain="plone"
+                      i18n:attributes="title title_required;"
+                      i18n:translate="label_required">(Required)</span>
+
+                <div class="formHelp" id="api_key_help">
+                    <span i18n:translate="help_api_key">
+                    Access a sign up page, and please generate API Key.
+                    </span>
+                    <a href="http://www.google.co.jp/apis/maps/signup.html">Sign up for the Google Maps API</a>
+                </div>
+    
+                <div tal:content="error">Validation error output</div>
+    
+                <input name="api_key"
+                       value=""
+                       size="90"
+                       tabindex=""
+                       style="width: 100%;"
+                       tal:attributes="value api_key;
+                                       tabindex tabindex/next;" />
+
+            </div>
+            <div class="formControls">
+                <input class="context"
+                       tabindex=""
+                       type="submit"
+                       name="form.button.Save"
+                       value="Save"
+		       i18n:domain="plone"
+                       i18n:attributes="value label_save;"
+                       tal:attributes="tabindex tabindex/next;"
+                       />
+            </div>
+    
+        </fieldset>
+
+        <input type="hidden" name="form.submitted" value="1" />
+
+    </form>
+
+</div>
+
+</body>
+</html>

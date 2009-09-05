@@ -1,0 +1,299 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ATGoogleMaps\n"
+"POT-Creation-Date: 2006-08-21 23:41+0900\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: googlemaps\n"
+"X-Is-Fallback-For:\n"
+
+#. Default: "Latitude"
+#: ./skins/googlemaps/latlng_widget.py
+msgid "label_latitude"
+msgstr ""
+
+#. Default: "Longitude"
+#: ./skins/googlemaps/latlng_widget.py
+msgid "label_longitude"
+msgstr ""
+
+#. Default: "Enter the address or the landmark. A center point in this map is set as a latitude and longitude.Longitude"
+#: ./skins/googlemaps/latlng_widget.py
+msgid "help_latlng_map"
+msgstr ""
+
+#. Default: "View in Google Earth"
+#: ./skins/googlemaps/gmap_view.pt
+msgid "view_google_earth"
+msgstr ""
+
+#. Default: "View larger map"
+#: ./skins/googlemaps/gmarker_view.pt
+msgid "label_larger_map"
+msgstr ""
+
+#. Default: "Google Maps API Key settings for this site."
+#: ./skins/googlemaps/prefs_gmap_form.cpt
+msgid "description_atgooglemaps_settings"
+msgstr ""
+
+#. Default: "ATGoogleMaps details"
+#: ./skins/googlemaps/prefs_gmap_form.cpt
+msgid "legend_atgooglemaps_details"
+msgstr ""
+
+#. Default: "Google Maps API Key"
+#: ./skins/googlemaps/prefs_gmap_form.cpt
+msgid "label_api_key"
+msgstr ""
+
+#. Default: "Access a sign up page, and please generate API Key."
+#: ./skins/googlemaps/prefs_gmap_form.cpt
+msgid "help_api_key"
+msgstr ""
+
+#. Default: "Google Maps Server"
+#: ./content/GMap.py
+msgid "label_server"
+msgstr ""
+
+#. Default: "Select a Google Maps server to use."
+#: ./content/GMap.py
+msgid "help_server"
+msgstr ""
+
+#. Default: "Height"
+#: ./content/GMap.py
+msgid "label_height"
+msgstr ""
+
+#. Default: "Height(pixel) of this map."
+#: ./content/GMap.py
+msgid "help_height"
+msgstr ""
+
+#. Default: "Center"
+#: ./content/GMap.py
+msgid "label_center"
+msgstr ""
+
+#. Default: "Center of this map."
+#: ./content/GMap.py
+#. latitude
+msgid "help_center"
+msgstr ""
+
+#. Default: "Zoom"
+#: ./content/GMap.py
+msgid "label_zoom"
+msgstr ""
+
+
+#. Default: "Select a zoom level."
+#: ./content/GMap.py
+msgid "help_zoom"
+msgstr ""
+
+#. Default: "Map Control"
+#: ./content/GMap.py
+msgid "label_map_control"
+msgstr ""
+
+#. Default: "Select a direction and zoom control type."
+#: ./content/GMap.py
+msgid "help_map_control"
+msgstr ""
+
+#. Default: "large"
+#: ./content/GMap.py
+msgid "large"
+msgstr ""
+
+#. Default: "small"
+#: ./content/GMap.py
+msgid "small"
+msgstr ""
+
+#. Default: "nothing"
+#: ./content/GMap.py
+msgid "nothing"
+msgstr ""
+
+#. Default: "Map Type"
+#: ./content/GMap.py
+msgid "label_map_type"
+msgstr ""
+
+#. Default: "Select a default map type."
+#: ./content/GMap.py
+msgid "help_map_type"
+msgstr ""
+
+#. Default: "map"
+#: ./content/GMap.py
+msgid "map"
+msgstr ""
+
+#. Default: "satellite"
+#: ./content/GMap.py
+msgid "satellite"
+msgstr ""
+
+#. Default: "Display Type Control"
+#: ./content/GMap.py
+msgid "label_type_control"
+msgstr ""
+
+#. Default: "If checked, Select a default map type."
+#: ./content/GMap.py
+msgid "help_type_control"
+msgstr ""
+
+#. Default: "Display Scale Control"
+#: ./content/GMap.py
+msgid "label_scale_control"
+msgstr ""
+
+#. Default: ""
+#: ./content/GMap.py
+msgid "help_scale_control"
+msgstr ""
+
+#. Default: "Display Overview Control"
+#: ./content/GMap.py
+msgid "label_overview_control"
+msgstr ""
+
+#. Default: ""
+#: ./content/GMap.py
+msgid "help_overview_control"
+msgstr ""
+
+#. Default: "Address"
+#: ./content/GMarker.py
+msgid "label_address"
+msgstr ""
+
+#. Default: ""
+#: ./content/GMarker.py
+msgid "help_address"
+msgstr ""
+
+#. Default: "Phone"
+#: ./content/GMarker.py
+msgid "label_phone"
+msgstr ""
+
+#. Default: ""
+#: ./content/GMarker.py
+msgid "help_phone"
+msgstr ""
+
+#. Default: "URL"
+#: ./content/GMarker.py
+msgid "label_url"
+msgstr ""
+
+#. Default: ""
+#: ./content/GMarker.py
+msgid "help_url"
+msgstr ""
+
+#. Default: "Image URL"
+#: ./content/GMarker.py
+msgid "label_image_url"
+msgstr ""
+
+#. Default: ""
+#: ./content/GMarker.py
+msgid "help_image_url"
+msgstr ""
+
+#. Default: "Point"
+#: ./content/GMarker.py
+msgid "label_point"
+msgstr ""
+
+#. Default: "Point of this marker."
+#: ./content/GMarker.py
+msgid "help_point"
+msgstr ""
+
+#. Default: "Detail"
+#: ./content/GMarker.py
+msgid "label_detail"
+msgstr ""
+
+#. Default: ""
+#: ./content/GMarker.py
+msgid "help_detail"
+msgstr ""
+
+#. Default: "Tab #1 title"
+#: ./content/GMarker.py
+msgid "label_tab1"
+msgstr ""
+
+#. Default: ""
+#: ./content/GMarker.py
+msgid "help_tab1"
+msgstr ""
+
+#. Default: "Tab #2 title"
+#: ./content/GMarker.py
+msgid "label_tab2"
+msgstr ""
+
+#. Default: ""
+#: ./content/GMarker.py
+msgid "help_tab2"
+msgstr ""
+
+#. Default: "Points"
+#: ./content/GPolyline.py
+msgid "label_points"
+msgstr ""
+
+#. Default: "Creates a polyline from an array of points."
+#: ./content/GPolyline.py
+msgid "help_points"
+msgstr ""
+
+#. Default: "Color"
+#: ./content/GPolyline.py
+msgid "label_color"
+msgstr ""
+
+#. Default: "Enter the color in hexadecimal numeric HTML style, i.e. #RRGGBB."
+#: ./content/GPolyline.py
+msgid "help_color"
+msgstr ""
+
+#. Default: "Width"
+#: ./content/GPolyline.py
+msgid "label_width"
+msgstr ""
+
+#. Default: "Select a width of the line in pixels."
+#: ./content/GPolyline.py
+msgid "help_width"            
+msgstr ""
+
+#. Default: "Opacity"
+#: ./content/GPolyline.py
+msgid "label_opacity"
+msgstr ""
+
+#. Default: ""
+#: ./content/GPolyline.py
+msgid "help_opacity"
+msgstr ""
+

@@ -1,0 +1,80 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ATGoogleMaps\n"
+"POT-Creation-Date: 2006-08-18 00:03+0900\n"
+"PO-Revision-Date: \n"
+"Last-Translator:\n"
+"Language-Team:\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8\n"
+"Domain: plone\n"
+"X-Is-Fallback-For:\n"
+
+#. Default: "GMap"
+#: ./content/GMap.py
+msgid "GMap"
+msgstr ""
+
+#. Default: "Google Maps"
+#: ./content/GMap.py
+msgid "Google Maps"
+msgstr ""
+
+#. Default: "Google maps document"
+#: ./content/GMap.py
+msgid "description_edit_gmap"
+msgstr ""
+
+#. Default: ""
+#: ./content/GMap.py
+msgid "googlemaps_control"
+msgstr "Map control"
+
+#. Default: "GMarker"
+#: ./content/GMarker.py
+msgid "GMarker"
+msgstr ""
+
+#. Default: "Google Marker"
+#: ./content/GMarker.py
+msgid "Google Marker"
+msgstr ""
+
+#. Default: "Google marker document"
+#: ./content/GMarker.py
+msgid "description_edit_gmarker"
+msgstr ""
+
+#. Default: ""
+#: ./content/GMarker.py
+msgid "googlemaps_tabbed"
+msgstr "Tabbed infowindow"
+
+#. Default: "GPolyline"
+#: ./content/GPolyline.py
+msgid "GPolyline"
+msgstr ""
+
+#. Default: "Drow polyline in Google Maps"
+#: ./content/GPolyline.py
+msgid "Drow polyline in Google Maps"
+msgstr ""
+
+#. Default: "Drow polyline in Google Maps"
+#: ./content/GPolyline.py
+msgid "description_edit_gmap"
+msgstr ""
+
+#. Default: "ATGoogleMaps Settings"
+#: ./skins/googlemaps/prefs_gmap_form.cpt
+msgid "ATGoogleMaps Settings"
+msgstr ""
+
+#. Default: "ATGoogleMaps settings updated."
+msgid "ATGoogleMaps settings updated."
+msgstr ""

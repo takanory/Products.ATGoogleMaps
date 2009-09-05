@@ -1,0 +1,12 @@
+[default]
+title=ATGoogleMaps Settings
+
+[security]
+View=0:Authenticated
+
+[validators]
+validators=validate_gmap
+
+[actions]
+action.success=traverse_to:string:prefs_gmap_set
+action.failure=traverse_to:string:prefs_gmap_form

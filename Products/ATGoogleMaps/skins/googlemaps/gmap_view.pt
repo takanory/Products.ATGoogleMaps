@@ -1,0 +1,132 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+<head>
+  <metal:block fill-slot="javascript_head_slot">
+    <script type="text/javascript" src=""
+            tal:attributes="src string:http://${here/server}/maps?file=api&v=2&key=${here/portal_properties/gmap_properties/api_key}">
+    </script>
+    <script type="text/javascript" src=""
+            tal:attributes="src string:$portal_url/atgooglemaps.js">
+    </script>
+    
+    <span tal:replace="structure here/gmap" />
+  </metal:block>
+</head>
+
+<body>
+
+<metal:main fill-slot="main">
+  <tal:main-macro metal:define-macro="main">
+
+    <div metal:use-macro="here/document_actions/macros/document_actions">
+      Document actions (print, sendto etc)
+    </div>
+
+    <div metal:use-macro="here/document_byline/macros/byline">
+      Get the byline - contains details about author and modification date.
+    </div>
+
+    <p class="documentDescription"
+       tal:content="here/Description"
+       tal:condition="here/Description">
+      Description
+    </p>
+
+    <!-- gmarker -->
+    <ul tal:define="markers python: here.objectValues(['GMarker'])">
+      <tal:gmarker tal:repeat="here markers">
+	<li id=""
+	    tal:condition="here/point | nothing"
+            tal:attributes="id string:marker_link_${here/id}">
+          <a href="javascript:void(0)" onclick="this.blur()" tal:content="here/pretty_title_or_id">
+            Gmarker title
+          </a>
+	</li>
+        <!-- info window -->
+        <div id="" style="display: none;"
+             tal:attributes="id string:marker_html_${here/id}">
+          <div style="width: 290px;">
+	    <div class="documentActions">
+	      <a href="" tal:condition="here/url" 
+ 	         tal:attributes="href here/url" 
+ 	         i18n:translate="" i18n:domain="plone"> 
+ 	        Link 
+ 	      </a> 
+ 	    </div> 
+
+            <h1 class="documentFirstHeading">
+              <a href="" tal:content="here/pretty_title_or_id"
+                 tal:attributes="href here/absolute_url">
+                Title or id
+              </a>
+            </h1>
+
+            <img src="" style="float: left; margin: 5px;"
+                 tal:condition="here/imageurl"
+                 tal:attributes="src here/imageurl" />
+
+	    <div metal:use-macro="here/gmarker_view/macros/gmarker">
+	      show related items if they exist
+	    </div>
+    
+            <div style="clear: both;" tal:condition="here/getText"
+                 tal:content="structure here/getText">
+               Body Text
+            </div>
+
+	    <div metal:use-macro="here/document_relateditems/macros/relatedItems">
+	      show related items if they exist
+	    </div>
+          </div>
+        </div>
+        <div id="" style="display: none;"
+             tal:attributes="id string:detail_html_${here/id}"
+	     tal:condition="here/detail">
+          <div style="width: 290px;">
+	    <div class="documentActions">
+	      <a href="" tal:condition="here/url" 
+ 	         tal:attributes="href here/url" 
+ 	         i18n:translate="" i18n:domain="plone"> 
+ 	        Link 
+ 	      </a> 
+ 	    </div> 
+
+            <h1 class="documentFirstHeading">
+              <a href="" tal:content="here/pretty_title_or_id"
+                 tal:attributes="href here/absolute_url">
+                Title or id
+              </a>
+            </h1>
+            <div tal:content="structure here/getDetail">
+               Detail Text
+            </div>
+	  </div>
+	</div>
+      </tal:gmarker>
+    </ul>
+    
+    <div id="map"
+         tal:attributes="style string:height: ${here/height}px;;">
+    </div>
+
+    <ul class="visualNoMarker">
+      <li>
+      <a href="gmap.kml">
+	<img src="#" tal:attributes="src string:$portal_url/googleearth_icon.gif" />
+	<span i18n:domain="googlemaps" i18n:translate="view_google_earth">View in Google Earth</span>
+      </a>
+      </li>
+    </ul>
+
+    <div class="poweredBy">
+      Powered by <a href="http://takanory.net/plone/develop/atgooglemaps">ATGoogleMaps</a>
+    </div>
+    
+  </tal:main-macro>
+</metal:main>
+    
+</body>
+</html>
+    
