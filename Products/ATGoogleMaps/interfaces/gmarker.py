@@ -7,6 +7,6 @@ from zope.app.container.constraints import containers
 from Products.ATGoogleMaps import ATGoogleMapsMessageFactory as _
 
 class IGMarker(Interface):
-    """Google Maps Marker Type"""
+    """GMarker"""
     
     # -*- schema definition goes here -*-

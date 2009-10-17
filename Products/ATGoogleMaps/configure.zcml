@@ -4,6 +4,8 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="Products.ATGoogleMaps">
 
+  <five:registerPackage package="." initialize=".initialize" />
+
   <!-- Include the sub-packages that use their own configure.zcml files. -->
   <include package=".browser" />
   <include package=".content" />
@@ -14,7 +16,7 @@
       name="default"
       title="ATGoogleMaps"
       directory="profiles/default"
-      description="ATContentTypes-based Google Maps product for Plone."
+      description="ATContentTypes-based Google Maps product for Plone"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
   

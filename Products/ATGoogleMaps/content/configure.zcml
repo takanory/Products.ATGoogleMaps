@@ -6,16 +6,6 @@
   <!-- configure your content components here -->
   
   <!-- -*- extra stuff goes here -*- -->
-  <class class=".gmarker.GMarker">
-    <require
-        permission="zope2.View"
-        interface="..interfaces.IGMarker"
-        />
-    <require
-        permission="cmf.ModifyPortalContent"
-        set_schema="..interfaces.IGMarker"
-        />
-  </class>
   <class class=".gmap.GMap">
     <require
         permission="zope2.View"
