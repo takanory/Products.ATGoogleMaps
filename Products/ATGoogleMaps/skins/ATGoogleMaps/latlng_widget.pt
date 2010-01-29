@@ -64,17 +64,18 @@ g/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 	  A center point in this map is set as a latitude and longitude.
 	</div>
 
-        <input type="text" size="50" id="q"/>
+        <input type="text" size="50" id="address"/>
         <input class="standalone" type="button" id="s"
 	       value="Search"
 	       tabindex=""
-	       onclick="codeAddress();"
+	       onclick="geocode();"
 	       i18n:domain="plone"
 	       i18n:attributes="value label_search;"
 	       tal:attributes="tabindex tabindex/next;"
 	       />
 
         <div id="map_canvas" style="height: 300px; width: 400px;">
+	<div id="crosshair"></div>
         </div>
 
       </tal:block>
