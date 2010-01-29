@@ -20,7 +20,7 @@ from Products.ATGoogleMaps.config import *
 from Products.ATGoogleMaps.field import LatLngField
 from Products.ATGoogleMaps.widget import LatLngWidget
 
-zoom_vocaburary = range(18)
+zoom_vocaburary = range(23)
 zoom_vocaburary.reverse()
 
 schema = Schema((
@@ -58,8 +58,8 @@ schema = Schema((
 	        )
 	    ),
     StringField('mapType',
-	        vocabulary=('hybrid', 'roadmap', 'satellite', 'terrain'),
-	        default='hybrid',
+	        vocabulary=(('HYBRID', 'Map+Satellite'), ('ROADMAP', 'Map'), ('SATELLITE', 'Satellite'), ('TERRAIN', 'Terrain')),
+	        default='HYBRID',
 	        widget=SelectionWidget(
 	            label='Map Type',
 	            label_msgid='label_map_type',
@@ -69,25 +69,25 @@ schema = Schema((
 	        ),
 	        schemata='googlemaps_control',
 	    ),
+    StringField('mapTypeControl',
+	        vocabulary=(('DEFAULT', 'Default'), ('HORIZONTAL_BAR', 'Horizontal bar'), ('DROPDOWN_MENU', 'Dropdown menu'), ('nothing', 'nothing')),
+	        default='DEFAULT',
+	        widget=SelectionWidget(
+	            label='Select mapType control type.',
+	            label_msgid='label_scale_control',
+	            description_msgid='help_scale_control',
+	            i18n_domain='googlemaps',
+	        ),
+	        schemata='googlemaps_control',
+	    ),
     StringField('navigationControl',
-	        vocabulary=('default', 'small', 'zoom_pan', 'android', 'nothing'),
-	        default='default',
+	        vocabulary=(('DEFAULT', 'Default'), ('SMALL', 'Small'), ('ZOOM_PAN', 'Zoom and Pan'), ('ANDROID', 'android'), ('nothing', 'nothing')),
+	        default='DEFAULT',
 	        widget=SelectionWidget(
 	            label='Navigation Control',
 	            label_msgid='label_navigation_control',
 	            description='Select navigation control type',
 	            description_msgid='help_map_control',
-	            i18n_domain='googlemaps',
-	        ),
-	        schemata='googlemaps_control',
-	    ),
-    StringField('mapTypeControl',
-	        vocabulary=('default', 'horizontal_bar', 'dropdown_menu', 'nothing'),
-	        default='default',
-	        widget=SelectionWidget(
-	            label='Select mapType control type.',
-	            label_msgid='label_scale_control',
-	            description_msgid='help_scale_control',
 	            i18n_domain='googlemaps',
 	        ),
 	        schemata='googlemaps_control',

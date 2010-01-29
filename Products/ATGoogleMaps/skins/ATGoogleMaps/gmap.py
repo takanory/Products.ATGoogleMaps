@@ -1,17 +1,41 @@
-lat = context.center['latitude']
-lng = context.center['longitude']
-zoom = context.zoom
+# create initialize method
+def initialize_func(js):
+    lat = context.center['latitude']
+    lng = context.center['longitude']
+    js.extend(('function initialize() {',
+	       '  var myOptions = {',
+	       '    zoom: %s,' % context.zoom,
+	       '    center: new google.maps.LatLng(%s, %s),' % (lat, lng),
+	       '    mapTypeId: google.maps.MapTypeId.%s,' % context.mapType
+	       ))
 
-print """<script type="text/javascript">
-  function initialize() {
-    var latlng = new google.maps.LatLng(%s, %s);
-    var myOptions = {
-      zoom: %s,
-      center: latlng,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-""" % (lat, lng, zoom)
+    # set mapTypeControl
+    if context.mapTypeControl == "nothing":
+	js.append('    mapTypeControl: false,')
+    else:
+        js.extend(('    mapTypeControl: true,',
+		   '    mapTypeControlOptions: {',
+		   '      style: google.maps.MapTypeControlStyle.%s,' % context.mapTypeControl,
+		   '    },',
+		   ))
+
+    # set mavigationControl
+    if context.navigationControl == "nothing":
+	js.append('    navigationControl: false,')
+    else:
+        js.extend(('    navigationControl: true,',
+		   '    navigationControlOptions: {',
+		   '      style: google.maps.NavigationControlStyle.%s' % context.navigationControl,
+		   '    },',
+		   ))
+
+    js.extend(('  };',
+	       '  var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);',
+	       ))
+    
+js = ['<script type="text/javascript">']
+initialize_func(js)
+print "\n".join(js)
 
 # custom marker javascript
 print """
