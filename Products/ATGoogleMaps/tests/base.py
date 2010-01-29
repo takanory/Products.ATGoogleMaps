@@ -50,20 +50,27 @@ def setup_product():
     # We may also need to load dependencies, e.g.:
     #   ztc.installPackage('borg.localrole')
 
-    ztc.installPackage('Products.ATGoogleMaps')
+    ztc.installPackage('ATGoogleMaps')
 
 # The order here is important: We first call the (deferred) function
 # which installs the products we need for this product. Then, we let
 # PloneTestCase set up this product on installation.
 
 setup_product()
-ptc.setupPloneSite(products=['Products.ATGoogleMaps'])
+ptc.setupPloneSite(products=[])
 
 class TestCase(ptc.PloneTestCase):
     """We use this base class for all the tests in this package. If
     necessary, we can put common utility or setup code in here. This
     applies to unit test cases.
     """
+    class Session(dict):
+        def set(self, key, value):
+            self[key] = value
+    
+    def _setup(self):
+        ptc.PloneTestCase._setup(self)
+        self.app.REQUEST['SESSION'] = self.Session()
 
 class FunctionalTestCase(ptc.FunctionalTestCase):
     """We use this class for functional integration tests that use

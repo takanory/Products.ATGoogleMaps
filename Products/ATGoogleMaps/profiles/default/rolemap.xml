@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<rolemap>
+ <permissions>
+   <permission name="ATGoogleMaps: Add GMap" acquire="True">
+     <role name="Manager" />
+     <role name="Owner" />
+     <role name="Contributor" />
+   </permission>
+   <permission name="ATGoogleMaps: Add GMarker" acquire="True">
+     <role name="Manager" />
+     <role name="Owner" />
+     <role name="Contributor" />
+   </permission>
+ </permissions>
+</rolemap>

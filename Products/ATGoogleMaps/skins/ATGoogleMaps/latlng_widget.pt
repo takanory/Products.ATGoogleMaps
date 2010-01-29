@@ -20,16 +20,20 @@ g/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 			     server here/server | here/aq_parent/server | string:maps.google.com">
 
 	<script type="text/javascript" src=""
+		tal:condition="nothing"
 		tal:attributes="src string:http://$server/maps?file=api&v=2&key=${here/portal_properties/gmap_properties/api_key}">
 	</script>
 	<script type="text/javascript" src=""
+		tal:condition="nothing"
 		tal:attributes="src string:http://www.google.com/uds/api?file=uds.js&amp;v=0.1&amp;key=${here/portal_properties/gmap_properties/api_key}">
 	</script>
 
 	<script type="text/javascript" src=""
+		tal:condition="nothing"
 		tal:attributes="src string:$portal_url/atgooglemaps.js">
 	</script>
-	<span tal:replace="structure here/latlng_map" />
+
+	<span tal:replace="structure here/latlng_map3" />
       
 	<label for="latitude"
                i18n:domain="googlemaps"
@@ -74,13 +78,13 @@ g/TR/xhtml1/DTD/xhtml1-transitional.dtd">
         <input class="standalone" type="button" id="s"
 	       value="Search"
 	       tabindex=""
-	       onclick="search();"
+	       onclick="codeAddress();"
 	       i18n:domain="plone"
 	       i18n:attributes="value label_search;"
 	       tal:attributes="tabindex tabindex/next;"
 	       />
 
-        <div id="map" style="height: 300px; width: 400px;">
+        <div id="map_canvas" style="height: 300px; width: 400px;">
         </div>
 
       </tal:block>

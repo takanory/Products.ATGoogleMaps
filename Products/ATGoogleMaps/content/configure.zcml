@@ -3,18 +3,20 @@
     xmlns:five="http://namespaces.zope.org/five"
     i18n_domain="Products.ATGoogleMaps">
 
-  <!-- configure your content components here -->
-  
-  <!-- -*- extra stuff goes here -*- -->
-  <class class=".gmap.GMap">
-    <require
-        permission="zope2.View"
-        interface="..interfaces.IGMap"
-        />
-    <require
-        permission="cmf.ModifyPortalContent"
-        set_schema="..interfaces.IGMap"
-        />
-  </class>
+  <!-- <content class=".GMap.GMap" /> -->
 
+	<!-- <five:registerClass
+		class=".GMap.GMap"
+		meta_type="GMap"
+		permission="Products.ATGoogleMaps.AddGMap"
+		icon="document_icon.gif"
+		/> -->
+  <!-- <content class=".GMarker.GMarker" /> -->
+
+	<!-- <five:registerClass
+		class=".GMarker.GMarker"
+		meta_type="GMarker"
+		permission="Products.ATGoogleMaps.AddGMarker"
+		icon="document_icon.gif"
+		/> -->
 </configure>

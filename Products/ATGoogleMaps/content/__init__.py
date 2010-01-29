@@ -1,3 +1,3 @@
 #
-import gmap
-import gmarker
+import GMap
+import GMarker

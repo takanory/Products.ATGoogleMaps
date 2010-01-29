@@ -1,8 +1,14 @@
 <?xml version="1.0"?>
-<object name="portal_skins">
- <object name="ATGoogleMaps" meta_type="Filesystem Directory View"
-    directory="ATGoogleMaps/skins/ATGoogleMaps"/>
- <skin-path name="*">
-  <layer name="ATGoogleMaps" insert-after="custom" />
- </skin-path>
+<object name="portal_skins"
+        meta_type="Plone Skins Tool"
+        allow_any="True"
+        cookie_persistence="False"
+        request_varname="plone_skin">
+  <object name="ATGoogleMaps"
+          meta_type="Filesystem Directory View"
+          directory="Products.ATGoogleMaps:skins/ATGoogleMaps"/>
+  <skin-path name="*">
+    <layer  name="ATGoogleMaps" insert-after="custom"/>
+  </skin-path>
+
 </object>

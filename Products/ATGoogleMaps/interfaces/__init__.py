@@ -1,3 +1,8 @@
 # -*- extra stuff goes here -*-
-from gmap import IGMap
-from gmarker import IGMarker
+from zope.interface import Interface
+
+class IGMap(Interface):
+    """"""
+
+class IGMarker(Interface):
+    """"""

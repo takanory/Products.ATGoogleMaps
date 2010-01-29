@@ -2,11 +2,15 @@
 """
 
 from zope.i18nmessageid import MessageFactory
+from Products.ATGoogleMaps import config
 
-from Products.Archetypes.atapi import *
-from config import *
+from Products.Archetypes import atapi
+from Products.CMFCore import utils
+from Products.CMFCore.permissions import setDefaultRoles
+
+from Products.ATGoogleMaps.config import *
+from Products.Archetypes.public import process_types, listTypes
 from Products.CMFCore.utils import ContentInit
-
 
 # Define a message factory for when this product is internationalised.
 # This will be imported with the special name "_" in most modules. Strings
@@ -14,15 +18,58 @@ from Products.CMFCore.utils import ContentInit
 
 ATGoogleMapsMessageFactory = MessageFactory('Products.ATGoogleMaps')
 
+# from Products.CMFCore.permissions import setDefaultRoles
+
+# setDefaultRoles("ATGoogleMaps: Add GMarker", ('Manager', 'Contributor'))
+
+
 def initialize(context):
+    """Initializer called when used as a Zope 2 product.
+
+    This is referenced from configure.zcml. Regstrations as a "Zope 2 product"
+    is necessary for GenericSetup profiles to work, for example.
+
+    Here, we call the Archetypes machinery to register our content types
+    with Zope and the CMF.
+    """
+    # import content
+    # 
+    # contentTypes, constructors, ftis = \
+    #             process_types(listTypes(PROJECTNAME), PROJECTNAME)
+    # print 'contentTypes:', contentTypes
+    # for i in range(0, len(contentTypes)):
+    #     permission = "%s: Add %s" % (PROJECTNAME, ftis[i]['meta_type'])
+    #     ContentInit("%s: %s" % (PROJECTNAME, ftis[i]['meta_type']),
+    #             content_types=contentTypes,
+    #             permission=permission,
+    #             extra_constructors=constructors,
+    #             ).initialize(context)
+    
+    # Retrieve the content types that have been registered with Archetypes
+    # This happens when the content type is imported and the registerType()
+    # call in the content type's module is invoked. Actually, this happens
+    # during ZCML processing, but we do it here again to be explicit. Of
+    # course, even if we import the module several times, it is only run
+    # once.
+    
     import content
-
-    content_types, constructors, ftis = process_types(listTypes(PROJECTNAME), PROJECTNAME)
-
+    content_types, constructors, ftis = atapi.process_types(
+        atapi.listTypes(config.PROJECTNAME),
+        config.PROJECTNAME)
+    print "content type:", content_types
+    
+    # Now initialize all these content types. The initialization process takes
+    # care of registering low-level Zope 2 factories, including the relevant
+    # add-permission. These are listed in config.py. We use different
+    # permissions for each content type to allow maximum flexibility of who
+    # can add which content types, where. The roles are set up in rolemap.xml
+    # in the GenericSetup profile.
+    
     for atype, constructor in zip(content_types, constructors):
-        ContentInit(
-            "%s: %s" % (PROJECTNAME, atype.portal_type),
-            content_types = (atype,),
-            permission = config.ADD_PERMISSIONS[atype.portal_type],
+        utils.ContentInit('%s: %s' % (config.PROJECTNAME, atype.portal_type),
+            content_types      = (atype,),
+            permission         = config.ADD_PERMISSIONS[atype.portal_type],
             extra_constructors = (constructor,),
             ).initialize(context)
+    
+
