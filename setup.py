@@ -36,7 +36,7 @@ tests_require=['zope.testing']
 
 setup(name='Products.ATGoogleMaps',
       version=version,
-      description="ATContentTypes-based Google Maps product for Plone.",
+      description="",
       long_description=long_description,
       # Get more strings from http://www.python.org/pypi?%3Aaction=list_classifiers
       classifiers=[
@@ -46,9 +46,9 @@ setup(name='Products.ATGoogleMaps',
         'License :: OSI Approved :: GNU General Public License (GPL)',
         ],
       keywords='',
-      author='takanori',
-      author_email='takanori@takanory.net',
-      url='http://plone.org/products/atgooglemaps',
+      author='Manabu Terada',
+      author_email='plone-developers@lists.sourceforge.net',
+      url='http://svn.plone.org/svn/plone/plone.example',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['Products', ],
