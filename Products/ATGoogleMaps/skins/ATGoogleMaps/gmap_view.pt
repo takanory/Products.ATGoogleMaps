@@ -6,15 +6,10 @@
   <metal:block fill-slot="javascript_head_slot">
     <script type="text/javascript" src=""
 	    tal:condition="nothing"
-            tal:attributes="src string:http://${here/server}/maps?file=api&v=2&key=${here/portal_properties/gmap_properties/api_key}">
-    </script>
-    <script type="text/javascript" src=""
-	    tal:condition="nothing"
             tal:attributes="src string:$portal_url/atgooglemaps.js">
     </script>
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-<span tal:replace="structure here/gmap3" />
-    <span tal:condition="nothing" tal:replace="structure here/gmap" />
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <span tal:replace="structure here/gmap" />
   </metal:block>
 </head>
 
@@ -23,19 +18,23 @@
 <metal:main fill-slot="main">
   <tal:main-macro metal:define-macro="main">
 
-    <div metal:use-macro="here/document_actions/macros/document_actions">
-      Document actions (print, sendto etc)
-    </div>
+    <div tal:replace="structure provider:plone.abovecontenttitle" />
 
-    <div metal:use-macro="here/document_byline/macros/byline">
-      Get the byline - contains details about author and modification date.
-    </div>
+    <h1 class="documentFirstHeading"> 
+      <metal:field use-macro="python:here.widget('title', mode='view')">
+        Title
+      </metal:field>
+    </h1>
 
-    <p class="documentDescription"
-       tal:content="here/Description"
-       tal:condition="here/Description">
-      Description
+    <div tal:replace="structure provider:plone.belowcontenttitle" />
+
+    <p class="documentDescription">
+      <metal:field use-macro="python:here.widget('description', mode='view')">
+        Description
+      </metal:field>
     </p>
+
+    <div tal:replace="structure provider:plone.abovecontentbody" />
 
     <!-- gmarker -->
     <ul tal:define="markers python: here.objectValues(['GMarker'])">
@@ -127,6 +126,11 @@
       Powered by <a href="http://takanory.net/plone/develop/atgooglemaps">ATGoogleMaps</a>
     </div>
     
+    <div metal:use-macro="here/document_relateditems/macros/relatedItems">
+      show related items if they exist
+    </div>
+    
+    <div tal:replace="structure provider:plone.belowcontentbody" />
   </tal:main-macro>
 </metal:main>
     
