@@ -1,17 +1,26 @@
 try:
-    latitude = context.point['latitude']
-    longitude = context.point['longitude']
-    print '<script type="text/javascript">'
-    print "//<![CDATA["
-    print "window.onload = function() {"
-    print "    if (GBrowserIsCompatible()) {"
-    print "        var map = createMap('map', %s, %s, 14);" % (latitude, longitude)
-    print "        createMarker(map, %s, %s);" % (latitude, longitude)
-    print "    }"
-    print "}"
-    print "//]]>"
-    print "</script>"
+    js = ['<script type="text/javascript">']
+    lat = context.point['latitude']
+    lng = context.point['longitude']
+    js.extend(('function initialize() {',
+               '  var latlng = new google.maps.LatLng(%s, %s)' % (lat, lng),
+               '  var myOptions = {',
+               '    zoom: 14,',
+               '    center: latlng,',
+               '    mapTypeId: google.maps.MapTypeId.ROADMAP,',
+               '    mapTypeControl: false,',
+               '    navigationControl: false',
+               '  };',
+               '  var map = new google.maps.Map(document.getElementById("map"), myOptions);',
+               '  var marker = new google.maps.Marker({',
+               '    position: latlng,',
+               '    map: map',
+               '  });'
+               '}',
+               'google.maps.event.addDomListener(window, "load", initialize);'
+               )) 
+    js.append('</script>')
 
-    return printed
+    return "\n".join(js)
 except:
     return
