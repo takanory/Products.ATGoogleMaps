@@ -5,13 +5,9 @@ var map;
 var marker;
 
 function initialize() {
-<dtml-if latitude>
   var latlng = new google.maps.LatLng(&dtml-latitude;, &dtml-longitude;);
-<dtml-else>
-  var latlng = new google.maps.LatLng(35.68, 139.77);
-</dtml-if>
   var options = {
-    zoom: 10,
+    zoom: 4,
     center: latlng,
     mapTypeId: google.maps.MapTypeId.ROADMAP,
     mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU}
@@ -22,6 +18,10 @@ function initialize() {
     position: latlng,
     map: map,
     draggable: true
+  });
+
+  google.maps.event.addListener(map, 'dblclick', function(event) {
+      marker.setPosition(event.latLng);
   });
 
   google.maps.event.addListener(marker, 'position_changed', function() {
