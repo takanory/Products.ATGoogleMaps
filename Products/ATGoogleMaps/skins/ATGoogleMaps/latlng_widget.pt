@@ -15,8 +15,8 @@ g/TR/xhtml1/DTD/xhtml1-transitional.dtd">
   <metal:use use-macro="field_macro | here/widgets/field/macros/edit">
     <metal:fill metal:fill-slot="widget_body">
 
-      <tal:block tal:define="latitude value/latitude | string:35.68;
-			     longitude value/longitude | string:139.77;">
+      <tal:block tal:define="latitude value/latitude | string:35.7317;
+			     longitude value/longitude | string:139.7278;">
 
 	<script type="text/javascript" src=""
 		tal:condition="nothing"
@@ -64,7 +64,7 @@ g/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 	  A center point in this map is set as a latitude and longitude.
 	</div>
 
-        <input type="text" size="50" id="address"/>
+        <input type="text" size="50" id="q"/>
         <input class="standalone" type="button" id="s"
 	       value="Search"
 	       tabindex=""

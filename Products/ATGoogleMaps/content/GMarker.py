@@ -13,7 +13,6 @@ from Products.CMFCore.utils import getToolByName
 from Products.ATContentTypes.content.base import ATCTContent
 from Products.ATContentTypes.content.schemata import finalizeATCTSchema
 from Products.ATContentTypes.configuration import zconf
-# from Products.CMFCore.permissions import View, ModifyPortalContent
 
 from Products.ATGoogleMaps.interfaces import IGMarker
 from Products.ATGoogleMaps.config import *
@@ -27,7 +26,7 @@ schema = Schema((
                     label_msgid='label_address',
                     description_msgid='help_address',
                     i18n_domain='googlemaps',
-                    size=30,
+                    size=60,
                     )
                 ),
     StringField('phone',
@@ -59,7 +58,7 @@ schema = Schema((
                 ),
     LatLngField('point',
                 required=True,
-                default_method='getGMapCenter',
+                default_method='getContainerCenter',
                 widget=LatLngWidget(
                     label='Point',
                     label_msgid='label_point',
@@ -68,26 +67,6 @@ schema = Schema((
                     i18n_domain='googlemaps',
                     size=12,
                     )
-                ),
-    StringField('tab1',
-                widget=IntegerWidget(
-                    label='Tab #1 title',
-                    label_msgid='label_tab1',
-                    description_msgid='help_tab1',
-                    i18n_domain='googlemaps',
-                    size=20,
-                    ),
-                schemata='googlemaps_tabbed',
-                ),
-    StringField('tab2',
-                widget=IntegerWidget(
-                    label='Tab #2 title',
-                    label_msgid='label_tab2',
-                    description_msgid='help_tab2',
-                    i18n_domain='googlemaps',
-                    size=20,
-                    ),
-                schemata='googlemaps_tabbed',
                 ),
     TextField('detail',
               searchable=True,
@@ -102,7 +81,7 @@ schema = Schema((
                   description_msgid="help_detail",
                   i18n_domain="googlemaps",
                   ),
-              schemata='googlemaps_tabbed',
+#              schemata='googlemaps_tabbed',
               ),
     ),)
 gmarker_schema = getattr(ATCTContent, 'schema', Schema(())).copy() + schema.copy()
@@ -119,5 +98,13 @@ class GMarker(ATCTContent):
     meta_type = "GMarker"
     _at_rename_after_creation = True
     
+    # default point value from parent GMap center
+    def getContainerCenter(self):
+        latlng = {'latitude': '0.0', 'longitude': '0.0'}
+        try:
+            latlng = self.aq_parent.getCenter()
+        except:
+            pass
+        return latlng
 
 registerType(GMarker, PROJECTNAME)
