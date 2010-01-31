@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ATGoogleMaps\n"
-"POT-Creation-Date: 2006-08-21 23:41+0900\n"
-"PO-Revision-Date: 2006-08-21 23:46+0900\n"
+"POT-Creation-Date: 2010-01-31 10:50+0900\n"
+"PO-Revision-Date: 2010-01-31 10:51+0900\n"
 "Last-Translator: takanori <takanori@takanory.net>\n"
 "Language-Team: takanory.net [http://takanory.net]\n"
 "MIME-Version: 1.0\n"
@@ -102,31 +102,6 @@ msgstr "縮尺"
 msgid "help_zoom"
 msgstr "地図の縮尺を指定します。数字が大きいほうがより詳細な地図になります。"
 
-#. Default: "Map Control"
-#: ./content/GMap.py
-msgid "label_map_control"
-msgstr "地図の制御パネル"
-
-#. Default: "Select a direction and zoom control type."
-#: ./content/GMap.py
-msgid "help_map_control"
-msgstr "地図を制御するパネル"
-
-#. Default: "large"
-#: ./content/GMap.py
-msgid "large"
-msgstr "サイズ大"
-
-#. Default: "small"
-#: ./content/GMap.py
-msgid "small"
-msgstr "サイズ小"
-
-#. Default: "nothing"
-#: ./content/GMap.py
-msgid "nothing"
-msgstr "表示なし"
-
 #. Default: "Map Type"
 #: ./content/GMap.py
 msgid "label_map_type"
@@ -135,47 +110,82 @@ msgstr "地図の種類"
 #. Default: "Select a default map type."
 #: ./content/GMap.py
 msgid "help_map_type"
-msgstr "表示する画像の種類を地図またはサテライトから選択します。"
+msgstr "初期状態の地図の種類を選択してください"
 
-#. Default: "map"
+#. Default: "Map+Satellite"
 #: ./content/GMap.py
-msgid "map"
+msgid "Map+Satellite"
+msgstr "地図+写真"
+
+#. Default: "Map"
+#: ./content/GMap.py
+msgid "Map"
 msgstr "地図"
 
-#. Default: "satellite"
+#. Default: "Satellite"
 #: ./content/GMap.py
-msgid "satellite"
-msgstr "衛星写真"
+msgid "Satellite"
+msgstr "航空写真"
 
-#. Default: "Display Type Control"
+#. Default: "Terrain"
 #: ./content/GMap.py
-msgid "label_type_control"
-msgstr "マップ切替ボタンを表示"
+msgid "Terrain"
+msgstr "地形"
 
-#. Default: "If checked, Select a default map type."
+#. Default: "Map Type Control"
 #: ./content/GMap.py
-msgid "help_type_control"
-msgstr "「地図」と「衛星画像」を切り替えるためのボタンを表示しない場合は、チェックをはずします。"
+msgid "label_map_type_control"
+msgstr "地図の種類の制御パネル"
 
-#. Default: "Display Scale Control"
+#. Default: "Select a default map type."
 #: ./content/GMap.py
-msgid "label_scale_control"
-msgstr "スケールを表示"
+msgid "help_map_type_control"
+msgstr "地図の種類の制御パネルの表示形式を選択してください。"
 
-#. Default: ""
+#. Default: "Default"
 #: ./content/GMap.py
-msgid "help_scale_control"
-msgstr "左下にスケールを表示しない場合は、チェックをはずします。"
+msgid "Default"
+msgstr "デフォルト"
 
-#. Default: "Display Overview Control"
+#. Default: "Horizontal bar"
 #: ./content/GMap.py
-msgid "label_overview_control"
-msgstr "オーバービュー地図を表示"
+msgid "Horizontal bar"
+msgstr "水平表示"
 
-#. Default: ""
+#. Default: "Dropdown menu"
 #: ./content/GMap.py
-msgid "help_overview_control"
-msgstr "右下にオーバービュー地図を表示しない場合は、チェックをはずします。"
+msgid "Dropdown menu"
+msgstr "ドロップダウンメニュー"
+
+#. Default: "nondisplay"
+#: ./content/GMap.py
+msgid "hide"
+msgstr "非表示"
+
+#. Default: "Navigation Control"
+#: ./content/GMap.py
+msgid "label_navigation_control"
+msgstr "ナビゲーション制御パネル"
+
+#. Default: "Select navigation control type."
+#: ./content/GMap.py
+msgid "help_navigation_control"
+msgstr "地図の移動、拡大縮小に使用する制御パネルの表示形式を選択してください。"
+
+#. Default: "Small"
+#: ./content/GMap.py
+msgid "Small"
+msgstr "縮小表示"
+
+#. Default: "Zoom and Pan"
+#: ./content/GMap.py
+msgid "Zoom and Pan"
+msgstr "ズームとパン"
+
+#. Default: "Android"
+#: ./content/GMap.py
+msgid "Android"
+msgstr "Android"
 
 #. Default: "Address"
 #: ./content/GMarker.py

@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ATGoogleMaps\n"
-"POT-Creation-Date: 2006-08-18 00:03+0900\n"
-"PO-Revision-Date: 2006-08-18 00:03+0900\n"
+"POT-Creation-Date: 2010-01-31 10:55+0900\n"
+"PO-Revision-Date: 2010-01-31 10:57+0900\n"
 "Last-Translator: takanori <takanori@takanory.net>\n"
 "Language-Team: takanory.net [http://takanory.net]\n"
 "MIME-Version: 1.0\n"
@@ -31,10 +31,10 @@ msgstr "Google マップを使用した地図のページ"
 msgid "description_edit_gmap"
 msgstr "Google マップを使用した地図のページ"
 
-#. Default: ""
+#. Default: "control settings"
 #: ./content/GMap.py
-msgid "googlemaps_control"
-msgstr "地図のコントロール"
+msgid "control settings"
+msgstr "制御パネル設定"
 
 #. Default: "GMarker"
 #: ./content/GMarker.py
