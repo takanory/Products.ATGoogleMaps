@@ -1,6 +1,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
       lang="en"
-      metal:use-macro="here/main_template/macros/master"
+      metal:use-macro="context/main_template/macros/master"
       i18n:domain="plone">
 <head>
   <metal:block fill-slot="javascript_head_slot">
@@ -9,7 +9,7 @@
             tal:attributes="src string:$portal_url/atgooglemaps.js">
     </script>
     <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-    <span tal:replace="structure here/gmap"/>
+    <span tal:replace="structure context/gmap"/>
   </metal:block>
 </head>
 
@@ -21,7 +21,7 @@
     <div tal:replace="structure provider:plone.abovecontenttitle" />
 
     <h1 class="documentFirstHeading"> 
-      <metal:field use-macro="python:here.widget('title', mode='view')">
+      <metal:field use-macro="python:context.widget('title', mode='view')">
         Title
       </metal:field>
     </h1>
@@ -29,7 +29,7 @@
     <div tal:replace="structure provider:plone.belowcontenttitle" />
 
     <p class="documentDescription">
-      <metal:field use-macro="python:here.widget('description', mode='view')">
+      <metal:field use-macro="python:context.widget('description', mode='view')">
         Description
       </metal:field>
     </p>
@@ -37,71 +37,72 @@
     <div tal:replace="structure provider:plone.abovecontentbody" />
 
     <!-- gmarker -->
-    <ul tal:define="markers python: here.objectValues(['GMarker'])">
+    <ul tal:define="markers python: context.objectValues(['GMarker'])"
+	tal:condition="nothing">
       <tal:gmarker tal:repeat="here markers">
 	<li id=""
-	    tal:condition="here/point | nothing"
-            tal:attributes="id string:marker_link_${here/id}">
-          <a href="javascript:void(0)" onclick="this.blur()" tal:content="here/pretty_title_or_id">
+	    tal:condition="context/point | nothing"
+            tal:attributes="id string:marker_link_${context/id}">
+          <a href="javascript:void(0)" onclick="this.blur()" tal:content="context/pretty_title_or_id">
             Gmarker title
           </a>
 	</li>
         <!-- info window -->
         <div id="" style="display: none;"
-             tal:attributes="id string:marker_html_${here/id}">
+             tal:attributes="id string:marker_html_${context/id}">
           <div style="width: 290px;">
 	    <div class="documentActions">
-	      <a href="" tal:condition="here/url" 
- 	         tal:attributes="href here/url" 
+	      <a href="" tal:condition="context/url" 
+ 	         tal:attributes="href context/url" 
  	         i18n:translate="" i18n:domain="plone"> 
  	        Link 
  	      </a> 
  	    </div> 
 
             <h1 class="documentFirstHeading">
-              <a href="" tal:content="here/pretty_title_or_id"
-                 tal:attributes="href here/absolute_url">
+              <a href="" tal:content="context/pretty_title_or_id"
+                 tal:attributes="href context/absolute_url">
                 Title or id
               </a>
             </h1>
 
             <img src="" style="float: left; margin: 5px;"
-                 tal:condition="here/imageurl"
-                 tal:attributes="src here/imageurl" />
+                 tal:condition="context/imageurl"
+                 tal:attributes="src context/imageurl" />
 
-	    <div metal:use-macro="here/gmarker_view/macros/gmarker">
+	    <div metal:use-macro="context/gmarker_view/macros/gmarker">
 	      show related items if they exist
 	    </div>
     
-            <div style="clear: both;" tal:condition="here/getText"
-                 tal:content="structure here/getText">
+            <div style="clear: both;" tal:condition="context/getText"
+                 tal:content="structure context/getText">
                Body Text
             </div>
 
-	    <div metal:use-macro="here/document_relateditems/macros/relatedItems">
+	    <div metal:use-macro="context/document_relateditems/macros/relatedItems">
 	      show related items if they exist
 	    </div>
           </div>
         </div>
         <div id="" style="display: none;"
-             tal:attributes="id string:detail_html_${here/id}"
-	     tal:condition="here/detail">
+             tal:attributes="id string:detail_html_${context/id}"
+	     tal:condition="context/detail">
           <div style="width: 290px;">
 	    <div class="documentActions">
-	      <a href="" tal:condition="here/url" 
- 	         tal:attributes="href here/url" 
+	      <a href="" tal:condition="context/url" 
+ 	         tal:attributes="href context/url" 
  	         i18n:translate="" i18n:domain="plone"> 
  	        Link 
  	      </a> 
  	    </div> 
 
             <h1 class="documentFirstHeading">
-              <a href="" tal:content="here/pretty_title_or_id"
-                 tal:attributes="href here/absolute_url">
+              <a href="" tal:content="context/pretty_title_or_id"
+                 tal:attributes="href context/absolute_url">
                 Title or id
               </a>
             </h1>
-            <div tal:content="structure here/getDetail">
+            <div tal:content="structure context/getDetail">
                Detail Text
             </div>
 	  </div>
@@ -110,7 +111,7 @@
     </ul>
     
     <div id="map_canvas"
-         tal:attributes="style string:height: ${here/height}px;;">
+         tal:attributes="style string:height: ${context/height}px;;">
     </div>
 
     <ul class="visualNoMarker">
@@ -126,7 +127,7 @@
       Powered by <a href="http://takanory.net/plone/develop/atgooglemaps">ATGoogleMaps</a>
     </div>
     
-    <div metal:use-macro="here/document_relateditems/macros/relatedItems">
+    <div metal:use-macro="context/document_relateditems/macros/relatedItems">
       show related items if they exist
     </div>
     

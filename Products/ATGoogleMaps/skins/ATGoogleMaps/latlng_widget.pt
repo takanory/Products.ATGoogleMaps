@@ -12,7 +12,7 @@ g/TR/xhtml1/DTD/xhtml1-transitional.dtd">
                   tal:replace="structure accessor" />
 
 <metal:define define-macro="edit">
-  <metal:use use-macro="field_macro | here/widgets/field/macros/edit">
+  <metal:use use-macro="field_macro | context/widgets/field/macros/edit">
     <metal:fill metal:fill-slot="widget_body">
 
       <tal:block tal:define="latitude value/latitude | string:35.7317;
@@ -23,7 +23,7 @@ g/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 		tal:attributes="src string:$portal_url/atgooglemaps.js">
 	</script>
 
-	<span tal:replace="structure here/latlng_map" />
+	<span tal:replace="structure context/latlng_map" />
       
 	<label for="latitude"
                i18n:domain="googlemaps"
@@ -84,7 +84,7 @@ g/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 </metal:define>
 
 <div metal:define-macro="search">
-  <div metal:use-macro="here/widgets/string/macros/edit" />
+  <div metal:use-macro="context/widgets/string/macros/edit" />
 </div>
 
 </body>

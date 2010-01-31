@@ -1,20 +1,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
       lang="en"
-      metal:use-macro="here/main_template/macros/master"
+      metal:use-macro="context/main_template/macros/master"
       i18n:domain="googlemaps">
 
 <head>
   <metal:block fill-slot="javascript_head_slot"
-               tal:condition="here/point | nothing">
+               tal:condition="context/point | nothing">
     <script type="text/javascript" src=""
-            tal:attributes="src string:http://maps.google.com/maps?file=api&v=2&key=${here/portal_properties/gmap_properties/api_key}">
+            tal:attributes="src string:http://maps.google.com/maps?file=api&v=2&key=${context/portal_properties/gmap_properties/api_key}">
     </script>
 
     <script type="text/javascript" src=""
             tal:attributes="src string:$portal_url/atgooglemaps.js">
     </script>
 
-    <span tal:replace="structure here/gmarker_map" />
+    <span tal:replace="structure context/gmarker_map" />
   </metal:block>
 </head>
 
@@ -23,79 +23,79 @@
 <metal:main fill-slot="main">
   <tal:main-macro metal:define-macro="main">
 
-    <div metal:use-macro="here/document_actions/macros/document_actions">
+    <div metal:use-macro="context/document_actions/macros/document_actions">
       Document actions (print, sendto etc)
     </div>
 
-    <h1 tal:content="here/pretty_title_or_id" class="documentFirstHeading">
+    <h1 tal:content="context/pretty_title_or_id" class="documentFirstHeading">
       Title or id
     </h1>
 
-    <div metal:use-macro="here/document_byline/macros/byline">
+    <div metal:use-macro="context/document_byline/macros/byline">
       Get the byline - contains details about author and modification date.
     </div>
 
     <div style="float: right; margin: 5px;"
-         tal:condition="here/point | nothing"
-	 tal:define="server here/server | here/aq_parent/server | string:maps.google.com">
+         tal:condition="context/point | nothing"
+	 tal:define="server context/server | context/aq_parent/server | string:maps.google.com">
       <div id="map" style="width: 300px; height: 150px;"></div>
       <a href=""
-         tal:attributes="href string:http://$server?ll=${here/point/latitude},${here/point/longitude}"
+         tal:attributes="href string:http://$server?ll=${context/point/latitude},${context/point/longitude}"
          i18n:translate="label_larger_map">
         View larger map
       </a>
     </div>
 
-    <h3 tal:content="here/tab1"
-	tal:condition="here/tab1">Tab #1 title</h3>
+    <h3 tal:content="context/tab1"
+	tal:condition="context/tab1">Tab #1 title</h3>
 
     <img src=""
-         tal:condition="here/imageurl"
-         tal:attributes="src here/imageurl" />
+         tal:condition="context/imageurl"
+         tal:attributes="src context/imageurl" />
 
     <metal:gmarker_macro define-macro="gmarker">
       <div class="documentDescription"
-	   tal:content="here/Description"
-	   tal:condition="here/Description">
+	   tal:content="context/Description"
+	   tal:condition="context/Description">
         Description
       </div>
 
-      <div tal:condition="here/address">
+      <div tal:condition="context/address">
 	<label i18n:translate="label_address">Address</label>
-	<span tal:replace="here/address" />
+	<span tal:replace="context/address" />
       </div>
 
-      <div tal:condition="here/phone">
+      <div tal:condition="context/phone">
 	<label i18n:translate="label_phone">Phone</label>
-	<span tal:replace="here/phone" />
+	<span tal:replace="context/phone" />
       </div>
     </metal:gmarker_macro>
 
-    <div tal:condition="here/url">
+    <div tal:condition="context/url">
       <label i18n:translate="URL">URL</label>
       <a href=""
-	 tal:content="here/url"
-         tal:attributes="href here/url">
+	 tal:content="context/url"
+         tal:attributes="href context/url">
 	Link
       </a>
     </div>
 
     <br style="clear: both;"/>
 
-    <div tal:condition="here/getText"
-         tal:content="structure here/getText">
+    <div tal:condition="context/getText"
+         tal:content="structure context/getText">
        Body Text
     </div>
 
-    <h3 tal:content="here/tab2"
-	tal:condition="here/tab2">Tab #2 title</h3>
+    <h3 tal:content="context/tab2"
+	tal:condition="context/tab2">Tab #2 title</h3>
 
-    <div tal:condition="here/detail"
-         tal:content="structure here/getDetail">
+    <div tal:condition="context/detail"
+         tal:content="structure context/getDetail">
        Detail Text
     </div>
 
-    <div metal:use-macro="here/document_relateditems/macros/relatedItems">
+    <div metal:use-macro="context/document_relateditems/macros/relatedItems">
       show related items if they exist
     </div>
 
