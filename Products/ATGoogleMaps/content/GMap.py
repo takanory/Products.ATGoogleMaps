@@ -13,7 +13,6 @@ from Products.CMFCore.utils import getToolByName
 from Products.ATContentTypes.content.folder import ATFolder
 from Products.ATContentTypes.content.schemata import finalizeATCTSchema
 from Products.ATContentTypes.configuration import zconf
-# from Products.CMFCore.permissions import View, ModifyPortalContent
 
 from Products.ATGoogleMaps.interfaces import IGMap
 from Products.ATGoogleMaps.config import *
@@ -58,7 +57,11 @@ schema = Schema((
 	        )
 	    ),
     StringField('mapType',
-	        vocabulary=(('HYBRID', 'Map+Satellite'), ('ROADMAP', 'Map'), ('SATELLITE', 'Satellite'), ('TERRAIN', 'Terrain')),
+	        vocabulary=(('HYBRID', 'Map+Satellite'),
+                            ('ROADMAP', 'Map'),
+                            ('SATELLITE', 'Satellite'),
+                            ('TERRAIN', 'Terrain'),
+                            ),
 	        default='HYBRID',
 	        widget=SelectionWidget(
 	            label='Map Type',
@@ -69,7 +72,11 @@ schema = Schema((
 	        ),
 	    ),
     StringField('mapTypeControl',
-	        vocabulary=(('DEFAULT', 'Default'), ('HORIZONTAL_BAR', 'Horizontal bar'), ('DROPDOWN_MENU', 'Dropdown menu'), ('hide', 'hide')),
+	        vocabulary=(('DEFAULT', 'Default'),
+                            ('HORIZONTAL_BAR', 'Horizontal bar'),
+                            ('DROPDOWN_MENU', 'Dropdown menu'),
+                            ('hide', 'hide'),
+                            ),
 	        default='DEFAULT',
 	        widget=SelectionWidget(
 	            label='Select mapType control type.',
@@ -80,7 +87,12 @@ schema = Schema((
 	        schemata='control settings',
 	    ),
     StringField('navigationControl',
-	        vocabulary=(('DEFAULT', 'Default'), ('SMALL', 'Small'), ('ZOOM_PAN', 'Zoom and Pan'), ('ANDROID', 'Android'), ('hide', 'hide')),
+	        vocabulary=(('DEFAULT', 'Default'),
+                            ('SMALL', 'Small'),
+                            ('ZOOM_PAN', 'Zoom and Pan'),
+                            ('ANDROID', 'Android'),
+                            ('hide', 'hide'),
+                            ),
 	        default='DEFAULT',
 	        widget=SelectionWidget(
 	            label='Navigation Control',
@@ -105,6 +117,5 @@ class GMap(ATFolder):
     
     meta_type = "GMap"
     _at_rename_after_creation = True
-    
 
 registerType(GMap, PROJECTNAME)
