@@ -1,65 +1,55 @@
-function createMap(map_id, lat, lng, zoom, map, type, scale, overview, map_type) {
-    if(lat == undefined) {
-	lat = 0.0;
-    }
-    if(lng == undefined) {
-	lng = 0.0;
-    }
-    if(zoom == undefined) {
-	zoom = 0;
-    }
-    if(map == undefined) {
-	map = 'small';
-    }
-    if(type == undefined) {
-	type = 'small';
-    }
-    if(scale == undefined) {
-	scale = false;
-    }
-    if(overview == undefined) {
-	overview = false;
-    }
-    if(map_type == undefined || map_type == 'map') {
-	map_type = G_NORMAL_MAP;
-    }
-    else if(map_type == 'satellite') {
-	map_type = G_SATELLITE_MAP;
+function createMap(map_id, lat, lng, zoom, mapType, typeCtl, navCtl) {
+    var options = {
+	zoom: zoom,
+	center: new google.maps.LatLng(lat, lng),
+    };
+    options.mapTypeId = eval("google.maps.MapTypeId." + mapType);
+
+    if (typeCtl != null) {
+	if (typeCtl == "hide") {
+	    options.mapTypeControl = false;
+	}
+	else {
+	    options.mapTypeControl = true;
+	    options.mapTypeControlOptions = {};
+	    options.mapTypeControlOptions.style = eval("google.maps.MapTypeControlStyle." + typeCtl);
+	}
     }
 
-    // Create map
-    var gmap = new GMap2(document.getElementById(map_id));
-    // set center
-    gmap.setCenter(new GLatLng(lat, lng), zoom, map_type);
-    // map control
-    if (map == 'large') {
-	gmap.addControl(new GLargeMapControl());
+    if (navCtl != null) {
+	if (navCtl == "hide") {
+	    options.navigationControl = false;
+	}
+	else {
+	    options.navigationControl = true;
+	    options.navigationControlOptions = {};
+	    options.navigationControlOptions.style = eval("google.maps.NavigationControlStyle." + navCtl);
+	}
     }
-    else if (map == 'small') {
-	gmap.addControl(new GSmallMapControl());
-    }
-    else if (map == 'zoom') {
-	gmap.addControl(new GSmallZoomControl());
-    }
-    // map type control
-    if (type == 'small') {
-	gmap.addControl(new GMapTypeControl(true));
-    }
-    else if (type) {
-	gmap.addControl(new GMapTypeControl());
-    }
-    // scale control
-    if (scale) {
-	gmap.addControl(new GScaleControl());
-    }
-    // overview control
-    if (overview) {
-	gmap.addControl(new GOverviewMapControl());
-    }
-    return gmap;
+
+    return new google.maps.Map(document.getElementById(map_id), options);
 }
 
-url = "<dtml-var portal_url>"
+function createMarker(map, lat, lng, title) {
+    var marker = new google.maps.Marker({
+	position: new google.maps.LatLng(lat, lng),
+	map: map,
+	title: title
+    });
+
+    var infowindow = new google.maps.InfoWindow({
+	content: "<div>" + title + "</div>"
+    });
+
+    google.maps.event.addListener(marker, 'click', function() {
+        infowindow.open(map, marker);
+    });
+    return marker;
+}
+
+var url = "<dtml-var portal_url>"
+
+/*
 // Create marker icon
 var icon = new GIcon();
 icon.image = url + "/gmap_marker.png";
@@ -77,34 +67,4 @@ center_icon.iconSize = new GSize( 23 , 23 );
 center_icon.shadowSize = new GSize( 29 , 29 );
 center_icon.iconAnchor = new GPoint( 11 , 11 );
 
-// Create markers and events
-function createMarker(map, lat, lng) {
-    var point = new GLatLng(lat, lng);
-    var marker = new GMarker(point, icon);
-    map.addOverlay(marker);
-    return marker;
-}
-
-function addMarker(map, tabs, marker_id, lat, lng) {
-    var point = new GLatLng(lat, lng);
-    var marker = new GMarker(point, icon);
-    map.addOverlay(marker);
-    f = function() {marker.openInfoWindowTabsHtml(tabs)};
-    GEvent.addListener(marker, 'click', f);
-    var marker_field = document.getElementById('marker_link_'+ marker_id);
-    if(marker_field){
-	marker_field.onmousedown = f;
-    }
-}
-
-function addCenterMarker(map) {
-    var center_marker = new GMarker(map.getCenter(), center_icon);
-    map.addOverlay(center_marker);
-
-    GEvent.addListener(map , "moveend" , function() {
-    map.removeOverlay(center_marker);
-        center_marker = new GMarker(map.getCenter(), center_icon);
-        map.addOverlay(center_marker);
-    });
-}
-
+*/

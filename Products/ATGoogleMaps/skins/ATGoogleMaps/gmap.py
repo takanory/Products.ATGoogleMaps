@@ -1,24 +1,10 @@
 site_encoding =  context.plone_utils.getSiteEncoding()
 
 def add_markers(js, markers):
-    #js.extend(('function addMarker()'))
     for marker in markers:
         lat = marker.point['latitude']
         lng = marker.point['longitude']
-        js.extend(('  var marker_%s = new google.maps.Marker({' % marker.id,
-                   '    position: new google.maps.LatLng(%s, %s),' % (lat, lng),
-                   '    map: map,',
-                   '    title: "%s"' % unicode(marker.Title(), site_encoding),
-#                   '    icon: image',
-                   '  });',
-                   ))
-        js.extend(('  var infowindow_%s = new google.maps.InfoWindow({' % marker.id,
-                   '    content: "<h2>%s</h2>"' % unicode(marker.Title(), site_encoding),
-                   '  });',
-                   "  google.maps.event.addListener(marker_%s, 'click', function() {" % marker.id,
-                   '    infowindow_%s.open(map, marker_%s)' % (marker.id, marker.id),
-                   '  });',
-                   ))
+        js.append('  var marker_%s = createMarker(map, %s, %s, "%s");' % (marker.id, lat, lng, marker.title))
 #      shape: shape,
 #      shadow: shadow,
 
@@ -27,36 +13,11 @@ def initialize_func(js):
     lat = context.center['latitude']
     lng = context.center['longitude']
     js.extend(('function initialize() {',
-	       '  var myOptions = {',
-	       '    zoom: %s,' % context.zoom,
-	       '    center: new google.maps.LatLng(%s, %s),' % (lat, lng),
-	       '    mapTypeId: google.maps.MapTypeId.%s,' % context.mapType,
-	       ))
+               '  var map = createMap("map_canvas", %s, %s, %s, "%s", "%s", "%s");' % (lat, lng, context.zoom, context.mapType, context.mapTypeControl, context.navigationControl),
+               ))
 
-    # set mapTypeControl
-    if context.mapTypeControl == "nothing":
-	js.append('    mapTypeControl: false,')
-    else:
-        js.extend(('    mapTypeControl: true,',
-		   '    mapTypeControlOptions: {',
-		   '      style: google.maps.MapTypeControlStyle.%s,' % context.mapTypeControl,
-		   '    },',
-		   ))
-
-    # set mavigationControl
-    if context.navigationControl == "nothing":
-	js.append('    navigationControl: false,')
-    else:
-        js.extend(('    navigationControl: true,',
-		   '    navigationControlOptions: {',
-		   '      style: google.maps.NavigationControlStyle.%s' % context.navigationControl,
-		   '    },',
-		   ))
-
-    js.extend(('  };',
-	       '  var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);',
-	       ))
     add_markers(js, context.objectValues(['GMarker']))
+
     js.append('}')
     
 js = ['<script type="text/javascript">']
