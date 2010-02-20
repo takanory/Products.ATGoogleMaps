@@ -30,20 +30,33 @@ function createMap(map_id, lat, lng, zoom, mapType, typeCtl, navCtl) {
     return new google.maps.Map(document.getElementById(map_id), options);
 }
 
-function createMarker(map, lat, lng, title) {
+var visibleInfoWindow = null;
+
+function createMarker(map, lat, lng, marker_id, title) {
     var marker = new google.maps.Marker({
 	position: new google.maps.LatLng(lat, lng),
 	map: map,
 	title: title
     });
 
-    var infowindow = new google.maps.InfoWindow({
-	content: "<div>" + title + "</div>"
+    var content = document.getElementById('infowindow_html_' + marker_id).innerHTML;
+    var infoWindow = new google.maps.InfoWindow({
+	content: content
     });
 
     google.maps.event.addListener(marker, 'click', function() {
-        infowindow.open(map, marker);
+        if (visibleInfoWindow) {
+	    visibleInfoWindow.close();
+	}
+        infoWindow.open(map, marker);
+	visibleInfoWindow = infoWindow;
     });
+
+    var link = document.getElementById("infowindow_link_" + marker_id);
+    link.onclick = function() {
+        google.maps.event.trigger(marker, "click");
+    };
+
     return marker;
 }
 

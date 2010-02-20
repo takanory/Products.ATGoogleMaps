@@ -4,7 +4,7 @@ def add_markers(js, markers):
     for marker in markers:
         lat = marker.point['latitude']
         lng = marker.point['longitude']
-        js.append('  var marker_%s = createMarker(map, %s, %s, "%s");' % (marker.id, lat, lng, marker.title))
+        js.append('  var marker_%s = createMarker(map, %s, %s, "%s", "%s");' % (marker.id, lat, lng, marker.id, marker.title))
 #      shape: shape,
 #      shadow: shadow,
 
