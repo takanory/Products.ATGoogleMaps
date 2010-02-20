@@ -37,76 +37,76 @@
     <div tal:replace="structure provider:plone.abovecontentbody" />
 
     <!-- gmarker -->
-    <ul tal:define="markers python: context.objectValues(['GMarker'])"
-	tal:condition="nothing">
-      <tal:gmarker tal:repeat="here markers">
+    <ul tal:define="markers python: context.objectValues(['GMarker'])">
+      <tal:gmarker tal:repeat="marker markers">
 	<li id=""
-	    tal:condition="context/point | nothing"
-            tal:attributes="id string:marker_link_${context/id}">
-          <a href="javascript:void(0)" onclick="this.blur()" tal:content="context/pretty_title_or_id">
+	    tal:define="mid marker/id;
+			"
+	    tal:condition="marker/point | nothing"
+            tal:attributes="id string:infowindow_link_${mid}">
+          <a href="javascript:void(0)" onclick="this.blur()" tal:content="marker/pretty_title_or_id">
             Gmarker title
           </a>
-	</li>
-        <!-- info window -->
-        <div id="" style="display: none;"
-             tal:attributes="id string:marker_html_${context/id}">
-          <div style="width: 290px;">
-	    <div class="documentActions">
-	      <a href="" tal:condition="context/url" 
- 	         tal:attributes="href context/url" 
- 	         i18n:translate="" i18n:domain="plone"> 
- 	        Link 
- 	      </a> 
- 	    </div> 
-
-            <h1 class="documentFirstHeading">
-              <a href="" tal:content="context/pretty_title_or_id"
-                 tal:attributes="href context/absolute_url">
-                Title or id
-              </a>
-            </h1>
+          <!-- info window -->
+          <div id="" style="display: none;"
+               tal:attributes="id string:infowindow_html_${mid}">
+            <h2 class="documentFirstHeading">
+	      <metal:field use-macro="python:marker.widget('title', mode='view')">
+		Title
+	      </metal:field>
+            </h2>
 
             <img src="" style="float: left; margin: 5px;"
-                 tal:condition="context/imageurl"
-                 tal:attributes="src context/imageurl" />
+		 tal:condition="marker/imageurl"
+		 tal:attributes="src marker/imageurl" />
 
-	    <div metal:use-macro="context/gmarker_view/macros/gmarker">
-	      show related items if they exist
-	    </div>
-    
-            <div style="clear: both;" tal:condition="context/getText"
-                 tal:content="structure context/getText">
-               Body Text
-            </div>
+	    <p class="documentDescription">
+	      <metal:field use-macro="python:marker.widget('description', mode='view')">
+		Description
+	      </metal:field>
+	    </p>
 
-	    <div metal:use-macro="context/document_relateditems/macros/relatedItems">
-	      show related items if they exist
+	    <div tal:condition="marker/address">
+              <metal:field use-macro="python:marker.widget('address', mode='view')">
+		Address
+              </metal:field>
 	    </div>
-          </div>
-        </div>
-        <div id="" style="display: none;"
-             tal:attributes="id string:detail_html_${context/id}"
-	     tal:condition="context/detail">
-          <div style="width: 290px;">
+
+	    <div tal:condition="marker/phone">
+              <metal:field use-macro="python:marker.widget('phone', mode='view')">
+		Phone
+              </metal:field>
+	    </div>
+
+	    <div tal:condition="marker/url">
+	      <a href=""
+		 tal:attributes="href marker/url"
+		 i18n:translate="" i18n:domain="plone">
+		Link
+	      </a>
+	    </div>
+
+	    <br style="clear: both;"/>
+
+	    <div tal:condition="marker/detail"
+		 tal:content="structure marker/getDetail">
+	      Detail Text
+	    </div>
+
 	    <div class="documentActions">
-	      <a href="" tal:condition="context/url" 
- 	         tal:attributes="href context/url" 
- 	         i18n:translate="" i18n:domain="plone"> 
- 	        Link 
- 	      </a> 
- 	    </div> 
+	      <ul>
+		<li>
+		  <a href=""
+		     tal:attributes="href marker/absolute_url"
+		     i18n:translate="" i18n:domain="plone">
+		    View
+		  </a>
+		</li>
+	      </ul>
+	    </div>
 
-            <h1 class="documentFirstHeading">
-              <a href="" tal:content="context/pretty_title_or_id"
-                 tal:attributes="href context/absolute_url">
-                Title or id
-              </a>
-            </h1>
-            <div tal:content="structure context/getDetail">
-               Detail Text
-            </div>
 	  </div>
-	</div>
+	</li>
       </tal:gmarker>
     </ul>
     
