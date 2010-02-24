@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ATGoogleMaps\n"
-"POT-Creation-Date: 2010-01-31 10:50+0900\n"
-"PO-Revision-Date: 2010-01-31 10:51+0900\n"
+"POT-Creation-Date: 2010-02-24 20:26+0900\n"
+"PO-Revision-Date: 2010-02-24 20:33+0900\n"
 "Last-Translator: takanori <takanori@takanory.net>\n"
 "Language-Team: takanory.net [http://takanory.net]\n"
 "MIME-Version: 1.0\n"
@@ -236,6 +236,16 @@ msgstr "マーカー位置"
 #: ./content/GMarker.py
 msgid "help_point"
 msgstr "このマーカーの座標を指定してください。"
+
+#. Default: "Display Street View"
+#: ./content/GMarker.py
+msgid "label_street_view"
+msgstr "ストリートビューを表示"
+
+#. Default: ""
+#: ./content/GMarker.py
+msgid "help_street_view"
+msgstr ""
 
 #. Default: "Detail"
 #: ./content/GMarker.py

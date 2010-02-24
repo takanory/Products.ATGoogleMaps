@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ATGoogleMaps\n"
-"POT-Creation-Date: 2010-01-31 10:50+0900\n"
+"POT-Creation-Date: 2010-02-24 20:26+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -234,6 +234,16 @@ msgstr ""
 #. Default: "Point of this marker."
 #: ./content/GMarker.py
 msgid "help_point"
+msgstr ""
+
+#. Default: "Display Street View"
+#: ./content/GMarker.py
+msgid "label_street_view"
+msgstr ""
+
+#. Default: ""
+#: ./content/GMarker.py
+msgid "help_street_view"
 msgstr ""
 
 #. Default: "Detail"
