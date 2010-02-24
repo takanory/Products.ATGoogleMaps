@@ -56,6 +56,14 @@ schema = Schema((
                     size=60,
                     )
                 ),
+    BooleanField('streetView',
+                 widget=BooleanWidget(
+                     label="Display Street View",
+                     label_msgid="label_street_view",
+                     description_msgid="help_street_view",
+                     i18n_domain="googlemaps",
+                     ),
+                 ),
     LatLngField('point',
                 required=True,
                 default_method='getContainerCenter',
