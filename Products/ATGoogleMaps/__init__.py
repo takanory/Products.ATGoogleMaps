@@ -56,7 +56,6 @@ def initialize(context):
     content_types, constructors, ftis = atapi.process_types(
         atapi.listTypes(config.PROJECTNAME),
         config.PROJECTNAME)
-    print "content type:", content_types
     
     # Now initialize all these content types. The initialization process takes
     # care of registering low-level Zope 2 factories, including the relevant
