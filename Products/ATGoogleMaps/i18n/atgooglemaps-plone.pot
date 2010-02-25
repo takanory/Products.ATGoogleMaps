@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ATGoogleMaps\n"
-"POT-Creation-Date: 2010-01-31 10:55+0900\n"
+"POT-Creation-Date: 2010-02-25 21:00+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator:\n"
 "Language-Team:\n"
@@ -15,19 +15,14 @@ msgstr ""
 "Domain: plone\n"
 "X-Is-Fallback-For:\n"
 
-#. Default: "GMap"
-#: ./content/GMap.py
+#. Default: "Map"
+#: ./profiles/default/types/GMap.xml
 msgid "GMap"
 msgstr ""
 
 #. Default: "Google Maps"
-#: ./content/GMap.py
-msgid "Google Maps"
-msgstr ""
-
-#. Default: "Google maps document"
-#: ./content/GMap.py
-msgid "description_edit_gmap"
+#: ./profiles/default/types/GMap.xml
+msgid "GMap_help"
 msgstr ""
 
 #. Default: "control settings"
@@ -35,46 +30,22 @@ msgstr ""
 msgid "control settings"
 msgstr ""
 
-#. Default: "GMarker"
-#: ./content/GMarker.py
+#. Default: "Marker"
+#: ./profiles/default/types/GMarker.xml
 msgid "GMarker"
 msgstr ""
 
 #. Default: "Google Marker"
-#: ./content/GMarker.py
-msgid "Google Marker"
+#: ./profiles/default/types/GMarker.xml
+msgid "GMarker_help"
 msgstr ""
-
-#. Default: "Google marker document"
-#: ./content/GMarker.py
-msgid "description_edit_gmarker"
-msgstr ""
-
-#. Default: ""
-#: ./content/GMarker.py
-msgid "googlemaps_tabbed"
-msgstr "Tabbed infowindow"
 
 #. Default: "GPolyline"
-#: ./content/GPolyline.py
+#: ./profiles/default/types/GPolyline.xml
 msgid "GPolyline"
 msgstr ""
 
 #. Default: "Drow polyline in Google Maps"
-#: ./content/GPolyline.py
-msgid "Drow polyline in Google Maps"
-msgstr ""
-
-#. Default: "Drow polyline in Google Maps"
-#: ./content/GPolyline.py
-msgid "description_edit_gmap"
-msgstr ""
-
-#. Default: "ATGoogleMaps Settings"
-#: ./skins/googlemaps/prefs_gmap_form.cpt
-msgid "ATGoogleMaps Settings"
-msgstr ""
-
-#. Default: "ATGoogleMaps settings updated."
-msgid "ATGoogleMaps settings updated."
+#: ./profiles/default/types/GPolyline.xml
+msgid "GPolyline_help"
 msgstr ""

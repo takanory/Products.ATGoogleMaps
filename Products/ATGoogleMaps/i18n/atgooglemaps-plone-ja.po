@@ -1,9 +1,9 @@
-# takanori <takanori@takanory.net>, 2006.
+# takanori <takanori@takanory.net>, 2006-2010
 msgid ""
 msgstr ""
 "Project-Id-Version: ATGoogleMaps\n"
-"POT-Creation-Date: 2010-01-31 10:55+0900\n"
-"PO-Revision-Date: 2010-01-31 10:57+0900\n"
+"POT-Creation-Date: 2010-02-25 21:00+0900\n"
+"PO-Revision-Date: 2010-02-25 21:01+0900\n"
 "Last-Translator: takanori <takanori@takanory.net>\n"
 "Language-Team: takanory.net [http://takanory.net]\n"
 "MIME-Version: 1.0\n"
@@ -16,45 +16,30 @@ msgstr ""
 "Domain: plone\n"
 "X-Is-Fallback-For: ja-jp\n"
 
-#. Default: "GMap"
-#: ./content/GMap.py
+#. Default: "Map"
+#: ./profiles/default/types/GMap.xml
 msgid "GMap"
 msgstr "地図"
 
 #. Default: "Google Maps"
-#: ./content/GMap.py
-msgid "Google Maps"
-msgstr "Google マップを使用した地図のページ"
-
-#. Default: "Google maps document"
-#: ./content/GMap.py
-msgid "description_edit_gmap"
-msgstr "Google マップを使用した地図のページ"
+#: ./profiles/default/types/GMap.xml
+msgid "GMap_help"
+msgstr "Google マップを使用した地図"
 
 #. Default: "control settings"
 #: ./content/GMap.py
 msgid "control settings"
 msgstr "制御パネル設定"
 
-#. Default: "GMarker"
-#: ./content/GMarker.py
+#. Default: "Marker"
+#: ./profiles/default/types/GMarker.xml
 msgid "GMarker"
 msgstr "マーカー"
 
 #. Default: "Google Marker"
-#: ./content/GMarker.py
-msgid "Google Marker"
-msgstr "地図上に配置して表示するマーカー"
-
-#. Default: "Google marker document"
-#: ./content/GMarker.py
-msgid "description_edit_gmarker"
-msgstr "地図上に配置して表示するマーカー"
-
-#. Default: ""
-#: ./content/GMarker.py
-msgid "googlemaps_tabbed"
-msgstr "タブの情報"
+#: ./profiles/default/types/GMarker.xml
+msgid "GMarker_help"
+msgstr "地図上に配置するマーカー"
 
 #. Default: "GPolyline"
 #: ./content/GPolyline.py
@@ -62,20 +47,7 @@ msgid "GPolyline"
 msgstr "折れ線"
 
 #. Default: "Drow polyline in Google Maps"
-#: ./content/GPolyline.py
-msgid "Drow polyline in Google Maps"
+#: ./profiles/default/types/GPolyline.xml
+msgid "GPolyline_help"
 msgstr "地図に描画できる折れ線"
 
-#. Default: "Drow polyline in Google Maps"
-#: ./content/GPolyline.py
-msgid "description_edit_gpolyline"
-msgstr "地図に描画できる折れ線"
-
-#. Default: "ATGoogleMaps Settings"
-#: ./skins/googlemaps/prefs_gmap_form.cpt
-msgid "ATGoogleMaps Settings"
-msgstr "ATGoogleMaps の設定"
-
-#. Default: "ATGoogleMaps settings updated."
-msgid "ATGoogleMaps settings updated."
-msgstr "ATGoogleMaps の設定が更新されました。"
