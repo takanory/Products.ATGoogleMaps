@@ -2,9 +2,9 @@
 <object name="GMap"
    meta_type="Factory-based Type Information with dynamic views"
    i18n:domain="plone" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
- <property name="title" i18n:translate="">GMap</property>
+ <property name="title" i18n:translate="GMap">Map</property>
  <property name="description"
-      i18n:translate="">GMap_help</property>
+      i18n:translate="GMap_help">Map uses Google Maps API</property>
  <property name="content_icon">gmap_icon.gif</property>
  <property name="content_meta_type">GMap</property>
  <property name="product">ATGoogleMaps</property>

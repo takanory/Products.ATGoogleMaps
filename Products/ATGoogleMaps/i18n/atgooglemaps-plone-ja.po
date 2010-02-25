@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ATGoogleMaps\n"
-"POT-Creation-Date: 2010-02-25 21:00+0900\n"
-"PO-Revision-Date: 2010-02-25 21:01+0900\n"
+"POT-Creation-Date: 2010-02-25 21:20+0900\n"
+"PO-Revision-Date: 2010-02-25 21:21+0900\n"
 "Last-Translator: takanori <takanori@takanory.net>\n"
 "Language-Team: takanory.net [http://takanory.net]\n"
 "MIME-Version: 1.0\n"
@@ -21,10 +21,10 @@ msgstr ""
 msgid "GMap"
 msgstr "地図"
 
-#. Default: "Google Maps"
+#. Default: "Map uses Google Maps API"
 #: ./profiles/default/types/GMap.xml
 msgid "GMap_help"
-msgstr "Google マップを使用した地図"
+msgstr "Google マップ API を使用した地図"
 
 #. Default: "control settings"
 #: ./content/GMap.py
@@ -36,10 +36,10 @@ msgstr "制御パネル設定"
 msgid "GMarker"
 msgstr "マーカー"
 
-#. Default: "Google Marker"
+#. Default: "Marker to display on a map"
 #: ./profiles/default/types/GMarker.xml
 msgid "GMarker_help"
-msgstr "地図上に配置するマーカー"
+msgstr "地図上に表示するマーカー"
 
 #. Default: "GPolyline"
 #: ./content/GPolyline.py

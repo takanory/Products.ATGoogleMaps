@@ -2,9 +2,9 @@
 <object name="GMarker"
    meta_type="Factory-based Type Information with dynamic views"
    i18n:domain="plone" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
- <property name="title" i18n:translate="">GMarker</property>
+ <property name="title" i18n:translate="GMarker">Marker</property>
  <property name="description"
-      i18n:translate="">GMarker_help</property>
+      i18n:translate="GMarker_help">Marker to display on a map</property>
  <property name="content_icon">gmarker_icon.gif</property>
  <property name="content_meta_type">GMarker</property>
  <property name="product">ATGoogleMaps</property>
