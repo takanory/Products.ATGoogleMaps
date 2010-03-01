@@ -1,0 +1,6 @@
+title:string=Google Maps properties
+
+icon_anchor_x:int=10
+icon_anchor_y:int=34
+shadow_anchor_x:int=10
+shadow_anchor_y:int=34
