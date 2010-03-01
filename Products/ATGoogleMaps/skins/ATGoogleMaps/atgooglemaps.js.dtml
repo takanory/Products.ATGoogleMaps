@@ -33,10 +33,25 @@ function createMap(map_id, lat, lng, zoom, mapType, typeCtl, navCtl) {
 var visibleInfoWindow = null;
 
 function createMarker(map, lat, lng, marker_id, title) {
+    <dtml-with "_['gmap_marker.png']" only>
+    var icon = new google.maps.MarkerImage("&dtml-absolute_url;",
+        new google.maps.Size(&dtml-width;, &dtml-height;),
+        new google.maps.Point(0, 0),
+        new google.maps.Point(10, 34));
+    </dtml-with>
+    <dtml-with "_['gmap_shadow.png']" only>
+    var shadow = new google.maps.MarkerImage("&dtml-absolute_url;",
+        new google.maps.Size(&dtml-width;, &dtml-height;),
+        new google.maps.Point(0, 0),
+        new google.maps.Point(10, 34));
+    </dtml-with>
+
     var marker = new google.maps.Marker({
 	position: new google.maps.LatLng(lat, lng),
 	map: map,
-	title: title
+	title: title,
+        icon: icon,
+        shadow: shadow
     });
 
     var content = document.getElementById('infowindow_html_' + marker_id).innerHTML;
@@ -59,25 +74,3 @@ function createMarker(map, lat, lng, marker_id, title) {
 
     return marker;
 }
-
-var url = "<dtml-var portal_url>"
-
-/*
-// Create marker icon
-var icon = new GIcon();
-icon.image = url + "/gmap_marker.png";
-icon.shadow = url + "/gmap_shadow.png";
-icon.iconSize = new GSize(20, 34);
-icon.shadowSize = new GSize(37, 34);
-icon.iconAnchor = new GPoint(9, 34);
-icon.infoWindowAnchor = new GPoint(9, 2);
-
-// Create center marker icon
-var center_icon = new GIcon();
-center_icon.image = url + "/centermarker.png";
-center_icon.shadow = url + "/centermarker_shadow.png";
-center_icon.iconSize = new GSize( 23 , 23 );
-center_icon.shadowSize = new GSize( 29 , 29 );
-center_icon.iconAnchor = new GPoint( 11 , 11 );
-
-*/
