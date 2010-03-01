@@ -18,11 +18,6 @@ g/TR/xhtml1/DTD/xhtml1-transitional.dtd">
       <tal:block tal:define="latitude value/latitude | string:35.7317;
 			     longitude value/longitude | string:139.7278;">
 
-	<script type="text/javascript" src=""
-		tal:condition="nothing"
-		tal:attributes="src string:$portal_url/atgooglemaps.js">
-	</script>
-
 	<span tal:replace="structure context/latlng_map" />
       
 	<label for="latitude"
