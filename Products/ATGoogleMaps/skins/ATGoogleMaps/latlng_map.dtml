@@ -5,17 +5,10 @@ var map;
 var marker;
 
 function initialize() {
-  var latlng = new google.maps.LatLng(&dtml-latitude;, &dtml-longitude;);
-  var options = {
-    zoom: 4,
-    center: latlng,
-    mapTypeId: google.maps.MapTypeId.ROADMAP,
-    mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU}
-  }
-  map = new google.maps.Map(document.getElementById("map_canvas"), options);
+  map = createMap("map_canvas", &dtml-latitude;, &dtml-longitude;, &dtml-zoom;, "ROADMAP", "DROPDOWN_MENU");
 
   marker = new google.maps.Marker({
-    position: latlng,
+    position: new google.maps.LatLng(&dtml-latitude;, &dtml-longitude;),
     map: map,
     draggable: true
   });

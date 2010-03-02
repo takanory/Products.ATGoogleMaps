@@ -16,7 +16,8 @@ g/TR/xhtml1/DTD/xhtml1-transitional.dtd">
     <metal:fill metal:fill-slot="widget_body">
 
       <tal:block tal:define="latitude value/latitude | string:35.7317;
-			     longitude value/longitude | string:139.7278;">
+			     longitude value/longitude | string:139.7278;
+			     zoom python:test(value.has_key('latitude'), '14', '4')">
 
 	<span tal:replace="structure context/latlng_map" />
       
