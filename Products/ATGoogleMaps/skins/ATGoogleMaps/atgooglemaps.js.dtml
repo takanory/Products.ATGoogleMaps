@@ -33,6 +33,10 @@ function createMap(map_id, lat, lng, zoom, mapType, typeCtl, navCtl) {
 var visibleInfoWindow = null;
 
 function createMarker(map, lat, lng, marker_id, title) {
+    var shape = {
+        coord: <dtml-var "gmap_properties.icon_shape">,
+	type: 'poly'
+    };
     <dtml-with "_['gmap_marker.png']">
     var icon = new google.maps.MarkerImage("&dtml-absolute_url;",
         new google.maps.Size(&dtml-width;, &dtml-height;),
@@ -51,7 +55,8 @@ function createMarker(map, lat, lng, marker_id, title) {
 	map: map,
 	title: title,
         icon: icon,
-        shadow: shadow
+        shadow: shadow,
+        shape: shape
     });
 
     var content = document.getElementById('infowindow_html_' + marker_id).innerHTML;
