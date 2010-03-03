@@ -1,0 +1,37 @@
+<img src="" style="float: left; margin: 5px;"
+     tal:condition="context/imageurl"
+     tal:attributes="src context/imageurl" />
+
+<p class="documentDescription">
+  <metal:field use-macro="python:context.widget('description', mode='view')">
+    Description
+  </metal:field>
+</p>
+
+<div tal:condition="context/address">
+  <metal:field use-macro="python:context.widget('address', mode='view')">
+    Address
+  </metal:field>
+</div>
+		
+<div tal:condition="context/phone">
+  <metal:field use-macro="python:context.widget('phone', mode='view')">
+    Phone
+  </metal:field>
+</div>
+
+<div tal:condition="context/url">
+  <a href=""
+     tal:attributes="href context/url"
+     i18n:translate="" i18n:domain="plone">
+    Link
+  </a>
+</div>
+
+<br style="clear: both;"/>
+
+<div tal:condition="context/detail"
+     tal:content="structure context/getDetail">
+  Detail Text
+</div>
+

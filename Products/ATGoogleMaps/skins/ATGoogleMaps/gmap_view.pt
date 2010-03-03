@@ -49,63 +49,28 @@
 	       tal:attributes="class string:${item_wf_state_class}">
               Marker title
             </a>
-          <div id="" style="display: none;"
-               tal:attributes="id string:infowindow_html_${item_id}">
-            <h2 class="documentFirstHeading">
-	      <metal:field use-macro="python:marker.widget('title', mode='view')">
-		Title
-	      </metal:field>
-            </h2>
+            <div id="" style="display: none;"
+		 tal:attributes="id string:infowindow_html_${item_id}">
+	      <h2 class="documentFirstHeading">
+		<metal:field use-macro="python:marker.widget('title', mode='view')">
+		  Title
+		</metal:field>
+	      </h2>
 
-            <img src="" style="float: left; margin: 5px;"
-		 tal:condition="marker/imageurl"
-		 tal:attributes="src marker/imageurl" />
+	      <span tal:replace="structure marker/infowindow" />
 
-	    <p class="documentDescription">
-	      <metal:field use-macro="python:marker.widget('description', mode='view')">
-		Description
-	      </metal:field>
-	    </p>
-
-	    <div tal:condition="marker/address">
-              <metal:field use-macro="python:marker.widget('address', mode='view')">
-		Address
-              </metal:field>
+	      <div class="documentActions">
+		<ul>
+		  <li>
+		    <a href=""
+		       tal:attributes="href marker/absolute_url"
+		       i18n:translate="" i18n:domain="plone">
+		      View
+		    </a>
+		  </li>
+		</ul>
+	      </div>
 	    </div>
-
-	    <div tal:condition="marker/phone">
-              <metal:field use-macro="python:marker.widget('phone', mode='view')">
-		Phone
-              </metal:field>
-	    </div>
-
-	    <div tal:condition="marker/url">
-	      <a href=""
-		 tal:attributes="href marker/url"
-		 i18n:translate="" i18n:domain="plone">
-		Link
-	      </a>
-	    </div>
-
-	    <br style="clear: both;"/>
-
-	    <div tal:condition="marker/detail"
-		 tal:content="structure marker/getDetail">
-	      Detail Text
-	    </div>
-
-	    <div class="documentActions">
-	      <ul>
-		<li>
-		  <a href=""
-		     tal:attributes="href marker/absolute_url"
-		     i18n:translate="" i18n:domain="plone">
-		    View
-		  </a>
-		</li>
-	      </ul>
-	    </div>
-	  </div>
 	  </li>
 	</tal:block>
       </tal:entry>
