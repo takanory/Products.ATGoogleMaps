@@ -32,7 +32,7 @@ function createMap(map_id, lat, lng, zoom, mapType, typeCtl, navCtl) {
 
 var visibleInfoWindow = null;
 
-function createMarker(map, lat, lng, marker_id, title) {
+function createMarker(map, lat, lng, marker_id, title, draggable) {
     var shape = {
         coord: <dtml-var "gmap_properties.icon_shape">,
 	type: 'poly'
@@ -50,32 +50,37 @@ function createMarker(map, lat, lng, marker_id, title) {
         new google.maps.Point(<dtml-var "gmap_properties.shadow_anchor_x">, <dtml-var "gmap_properties.shadow_anchor_y">));
     </dtml-with>
 
+    if (draggable == null) {
+	draggable = false;
+    }
     var marker = new google.maps.Marker({
 	position: new google.maps.LatLng(lat, lng),
 	map: map,
 	title: title,
         icon: icon,
         shadow: shadow,
-        shape: shape
+        shape: shape,
+	draggable: draggable
     });
 
-    var content = document.getElementById('infowindow_html_' + marker_id).innerHTML;
-    var infoWindow = new google.maps.InfoWindow({
-	content: content
-    });
+    if (marker_id) {
+        var content = document.getElementById('infowindow_html_' + marker_id).innerHTML;
+	var infoWindow = new google.maps.InfoWindow({
+	    content: content
+        });
+        google.maps.event.addListener(marker, 'click', function() {
+            if (visibleInfoWindow) {
+	        visibleInfoWindow.close();
+            }
+            infoWindow.open(map, marker);
+	    visibleInfoWindow = infoWindow;
+	});
 
-    google.maps.event.addListener(marker, 'click', function() {
-        if (visibleInfoWindow) {
-	    visibleInfoWindow.close();
-	}
-        infoWindow.open(map, marker);
-	visibleInfoWindow = infoWindow;
-    });
-
-    var link = document.getElementById("infowindow_link_" + marker_id);
-    link.onclick = function() {
-        google.maps.event.trigger(marker, "click");
-    };
+	var link = document.getElementById("infowindow_link_" + marker_id);
+	link.onclick = function() {
+            google.maps.event.trigger(marker, "click");
+	};
+    }
 
     return marker;
 }

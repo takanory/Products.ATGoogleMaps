@@ -36,8 +36,7 @@
     <ul tal:define="markers python: context.objectValues(['GMarker'])">
       <tal:gmarker tal:repeat="marker markers">
 	<li id=""
-	    tal:define="mid marker/id;
-			"
+	    tal:define="mid marker/id;"
 	    tal:condition="marker/point | nothing"
             tal:attributes="id string:infowindow_link_${mid}">
           <a href="javascript:void(0)" onclick="this.blur()" tal:content="marker/pretty_title_or_id">
