@@ -14,9 +14,6 @@
  <property name="filter_content_types">True</property>
  <property name="allowed_content_types">
   <element value="GMarker"/>
-  <element value="Document"/>
-  <element value="Image"/>
-  <element value="News Item"/>
  </property>
  <property name="allow_discussion">False</property>
  <property name="default_view">gmap_view</property>
