@@ -9,12 +9,14 @@
     <longitude tal:content="context/center/longitude">139.71</longitude>
     <latitude tal:content="context/center/latitude">35.73</latitude>
   </LookAt>
-  <Placemark tal:repeat="context python:context.objectValues('GMarker')">
-    <name tal:content="context/pretty_title_or_id">Marker title</name>
-    <description tal:content="context/kml_description">Description</description>
-    <Point>
-      <coordinates tal:content="string:${context/point/longitude},${context/point/latitude}">139.71,35.73</coordinates>
-    </Point>
-  </Placemark>
+  <tal:marker tal:repeat="item context/getFolderContents">
+    <Placemark tal:define="marker item/getObject">
+      <name tal:content="item/pretty_title_or_id">Marker title</name>
+      <description tal:content="item/Description">Description</description>
+      <Point>
+	<coordinates tal:content="string:${marker/point/longitude},${marker/point/latitude}">139.71,35.73</coordinates>
+      </Point>
+    </Placemark>
+  </tal:marker>
 </Document>
 </kml>

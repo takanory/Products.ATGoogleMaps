@@ -1,7 +1,8 @@
 site_encoding =  context.plone_utils.getSiteEncoding()
 
-def add_markers(js, markers):
-    for marker in markers:
+def add_markers(js, items):
+    for item in items:
+        marker = item.getObject()
         lat = marker.point['latitude']
         lng = marker.point['longitude']
         js.append('  var marker_%s = createMarker(map, %s, %s, "%s", "%s");' % (marker.id, lat, lng, marker.id, marker.title))
@@ -14,7 +15,7 @@ def initialize_func(js):
                '  var map = createMap("map_canvas", %s, %s, %s, "%s", "%s", "%s");' % (lat, lng, context.zoom, context.mapType, context.mapTypeControl, context.navigationControl),
                ))
 
-    add_markers(js, context.objectValues(['GMarker']))
+    add_markers(js, context.getFolderContents())
 
     js.append('}')
     
