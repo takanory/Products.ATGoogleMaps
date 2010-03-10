@@ -33,48 +33,53 @@
     <div tal:replace="structure provider:plone.abovecontentbody" />
 
     <!-- gmarker -->
-    <ul tal:define="folderContents context/getFolderContents">
-      <tal:entry tal:repeat="item folderContents">
-        <tal:block tal:define="marker item/getObject;
-			       item_id item/getId|item/id;
-                               item_title_or_id item/pretty_title_or_id;
-                               item_wf_state item/review_state|python: wtool.getInfoFor(item, 'review_state', '');
-                               item_wf_state_class python:'state-' + normalizeString(item_wf_state);
-                               ">
-	  <li id=""
-            tal:attributes="id string:infowindow_link_${item_id}">
+    <tal:gmarker tal:define="folderContents context/getFolderContents">
+      <ul class="gmarkerBlock">
+	<tal:entry tal:repeat="item folderContents">
+          <li id = ""
+	      tal:define="item_id item/getId|item/id;
+			  item_title_or_id item/pretty_title_or_id;
+			  item_wf_state item/review_state|python: wtool.getInfoFor(item, 'review_state', '');
+			  item_wf_state_class python:'state-' + normalizeString(item_wf_state);"
+	      tal:attributes="id string:infowindow_link_${item_id}">
             <a href="javascript:void(0)"
 	       onclick="this.blur()"
 	       tal:content="item_title_or_id"
 	       tal:attributes="class string:${item_wf_state_class}">
-              Marker title
+	      Marker title
             </a>
-            <div id="" style="display: none;"
-		 tal:attributes="id string:infowindow_html_${item_id}">
-	      <h2 class="documentFirstHeading">
-		<metal:field use-macro="python:marker.widget('title', mode='view')">
-		  Title
-		</metal:field>
-	      </h2>
-
-	      <span tal:replace="structure marker/infowindow" />
-
-	      <div class="documentActions">
-		<ul>
-		  <li>
-		    <a href=""
-		       tal:attributes="href marker/absolute_url"
-		       i18n:translate="" i18n:domain="plone">
-		      View
-		    </a>
-		  </li>
-		</ul>
-	      </div>
-	    </div>
 	  </li>
-	</tal:block>
+	</tal:entry>
+      </ul>
+
+      <tal:entry tal:repeat="item folderContents">
+        <div id="" style="display: none;"
+	     tal:define="marker item/getObject;
+			 item_id item/getId|item/id;"
+	     tal:attributes="id string:infowindow_html_${item_id}">
+	  <h2 class="documentFirstHeading">
+	    <metal:field use-macro="python:marker.widget('title', mode='view')">
+	      Title
+	    </metal:field>
+	  </h2>
+
+	  <span tal:replace="structure marker/infowindow" />
+
+	  <div class="documentActions">
+	    <ul>
+	      <li>
+		<a href=""
+		   tal:attributes="href marker/absolute_url"
+		   i18n:translate="" i18n:domain="plone">
+		  View
+		</a>
+	      </li>
+	    </ul>
+	  </div>
+	</div>
       </tal:entry>
-    </ul>
+    </tal:gmarker>
+
     
     <div id="map_canvas"
          tal:attributes="style string:height: ${context/height}px;;">
