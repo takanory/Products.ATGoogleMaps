@@ -17,7 +17,7 @@ g/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
       <tal:block tal:define="latitude value/latitude | string:35.7317;
 			     longitude value/longitude | string:139.7278;
-			     zoom python:test(value.has_key('latitude'), '14', '4')">
+			     zoom python:test(value, '14', '4')">
 
 	<span tal:replace="structure context/latlng_map" />
       
