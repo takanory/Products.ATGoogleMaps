@@ -8,7 +8,7 @@ from setuptools import setup, find_packages
 def read(*rnames):
     return open(os.path.join(os.path.dirname(__file__), *rnames)).read()
 
-version = '0.6'
+version = read("Products", "ATGoogleMaps", "version.txt").strip()
 
 long_description = (
     read('README.txt')
@@ -45,10 +45,10 @@ setup(name='Products.ATGoogleMaps',
         'Topic :: Software Development :: Libraries :: Python Modules',
         'License :: OSI Approved :: GNU General Public License (GPL)',
         ],
-      keywords='',
-      author='Manabu Terada',
-      author_email='plone-developers@lists.sourceforge.net',
-      url='http://svn.plone.org/svn/plone/plone.example',
+      keywords='Plone ATGoogleMaps',
+      author='Takanori Suzuki',
+      author_email='takanori@takanory.net',
+      url='http://plone.org/products/atgooglemaps',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['Products', ],
