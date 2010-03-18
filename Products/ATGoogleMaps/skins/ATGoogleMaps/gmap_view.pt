@@ -37,11 +37,11 @@
       <ul class="gmarkerBlock">
 	<tal:entry tal:repeat="item folderContents">
           <li id = ""
-	      tal:define="item_id item/getId|item/id;
+	      tal:define="index repeat/item/index;
 			  item_title_or_id item/pretty_title_or_id;
 			  item_wf_state item/review_state|python: wtool.getInfoFor(item, 'review_state', '');
 			  item_wf_state_class python:'state-' + normalizeString(item_wf_state);"
-	      tal:attributes="id string:infowindow_link_${item_id}">
+	      tal:attributes="id string:infowindow_link_${index}">
             <a href="javascript:void(0)"
 	       onclick="this.blur()"
 	       tal:content="item_title_or_id"
@@ -51,12 +51,13 @@
 	  </li>
 	</tal:entry>
       </ul>
+      <br style="clear: both;" />
 
       <tal:entry tal:repeat="item folderContents">
         <div id="" style="display: none;"
 	     tal:define="marker item/getObject;
-			 item_id item/getId|item/id;"
-	     tal:attributes="id string:infowindow_html_${item_id}">
+			 index repeat/item/index;"
+	     tal:attributes="id string:infowindow_html_${index}">
 	  <h2 class="documentFirstHeading">
 	    <metal:field use-macro="python:marker.widget('title', mode='view')">
 	      Title
@@ -80,7 +81,6 @@
       </tal:entry>
     </tal:gmarker>
 
-    
     <div id="map_canvas"
          tal:attributes="style string:height: ${context/height}px;;">
     </div>

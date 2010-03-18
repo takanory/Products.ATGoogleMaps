@@ -32,7 +32,7 @@ function createMap(map_id, lat, lng, zoom, mapType, typeCtl, navCtl) {
 
 var visibleInfoWindow = null;
 
-function createMarker(map, lat, lng, marker_id, title, draggable) {
+function createMarker(map, lat, lng, index, title, draggable) {
     var shape = {
         coord: <dtml-var "gmap_properties.icon_shape">,
 	type: 'poly'
@@ -63,8 +63,8 @@ function createMarker(map, lat, lng, marker_id, title, draggable) {
 	draggable: draggable
     });
 
-    if (marker_id) {
-        var content = document.getElementById('infowindow_html_' + marker_id).innerHTML;
+    if (index) {
+        var content = document.getElementById('infowindow_html_' + index).innerHTML;
 	var infoWindow = new google.maps.InfoWindow({
 	    content: content
         });
@@ -76,7 +76,7 @@ function createMarker(map, lat, lng, marker_id, title, draggable) {
 	    visibleInfoWindow = infoWindow;
 	});
 
-	var link = document.getElementById("infowindow_link_" + marker_id);
+	var link = document.getElementById("infowindow_link_" + index);
 	link.onclick = function() {
             google.maps.event.trigger(marker, "click");
 	};

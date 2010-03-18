@@ -1,11 +1,11 @@
 site_encoding =  context.plone_utils.getSiteEncoding()
 
 def add_markers(js, items):
-    for item in items:
-        marker = item.getObject()
+    for index in range(len(items)):
+        marker = items[index].getObject()
         lat = marker.point['latitude']
         lng = marker.point['longitude']
-        js.append('  var marker_%s = createMarker(map, %s, %s, "%s", "%s");' % (marker.id, lat, lng, marker.id, marker.title))
+        js.append('  var marker_%d = createMarker(map, %s, %s, "%d", "%s");' % (index, lat, lng, index, marker.title))
 
 # create initialize method
 def initialize_func(js):
