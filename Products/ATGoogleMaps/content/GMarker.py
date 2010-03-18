@@ -10,7 +10,7 @@ from zope import interface
 from Products.Archetypes.atapi import *
 from Products.CMFCore.utils import getToolByName
 
-from Products.ATContentTypes.content.base import ATCTContent
+from Products.ATContentTypes.content.document import ATDocument
 from Products.ATContentTypes.content.schemata import finalizeATCTSchema
 from Products.ATContentTypes.configuration import zconf
 
@@ -76,26 +76,11 @@ schema = Schema((
                     size=12,
                     )
                 ),
-    TextField('detail',
-              searchable=True,
-              validators=('isTidyHtmlWithCleanup',),
-              default_content_type=zconf.ATDocument.default_content_type,
-              default_output_type='text/x-html-safe',
-              allowable_content_types=zconf.ATDocument.allowed_content_types,
-              widget=RichWidget(
-                  rows=10,
-                  label="Detail",
-                  label_msgid="label_detail",
-                  description_msgid="help_detail",
-                  i18n_domain="googlemaps",
-                  ),
-#              schemata='googlemaps_tabbed',
-              ),
     ),)
-gmarker_schema = getattr(ATCTContent, 'schema', Schema(())).copy() + schema.copy()
+gmarker_schema = getattr(ATDocument, 'schema', Schema(())).copy() + schema.copy()
 finalizeATCTSchema(gmarker_schema)
 
-class GMarker(ATCTContent):
+class GMarker(ATDocument):
     """
     For GMarker
     """
