@@ -22,16 +22,16 @@
 
 <div tal:condition="context/url">
   <a href=""
-     tal:attributes="href context/url"
-     i18n:translate="" i18n:domain="plone">
-    Link
+     tal:attributes="href context/url">
+    <metal:field use-macro="python:here.widget('url', mode='view')">
+      Link
+    </metal:field>
   </a>
 </div>
 
 <br style="clear: both;"/>
 
-<div tal:condition="context/detail"
-     tal:content="structure context/getDetail">
-  Detail Text
-</div>
+<metal:field use-macro="python:here.widget('text', mode='view')">
+  Body text
+</metal:field>
 

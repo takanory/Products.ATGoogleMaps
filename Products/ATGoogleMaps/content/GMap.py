@@ -62,7 +62,7 @@ schema = Schema((
                             ('SATELLITE', 'Satellite'),
                             ('TERRAIN', 'Terrain'),
                             ),
-	        default='HYBRID',
+	        default='ROADMAP',
 	        widget=SelectionWidget(
 	            label='Map Type',
 	            label_msgid='label_map_type',
@@ -117,5 +117,9 @@ class GMap(ATFolder):
     
     meta_type = "GMap"
     _at_rename_after_creation = True
+
+    # Don't show the display options
+    def canSetDefaultPage(self):
+        return False
 
 registerType(GMap, PROJECTNAME)
