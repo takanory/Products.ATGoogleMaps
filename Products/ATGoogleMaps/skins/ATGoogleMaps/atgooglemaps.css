@@ -1,0 +1,20 @@
+.gmarkerBox {
+}
+
+.gmarkerBlock {
+   list-style: none;
+   list-style-image: none;
+   display: block;
+   text-align: left;
+}
+
+.gmarkerBlock li{
+   display: inline;
+   margin-left: 0.5em;
+   float: left;
+   width: 10em;
+}
+
+.gmarkerContent {
+   display: none;
+}
