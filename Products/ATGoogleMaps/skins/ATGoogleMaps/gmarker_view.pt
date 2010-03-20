@@ -39,7 +39,11 @@
 	 tal:define="latlng string:${context/point/latitude},${context/point/longitude}">
       <div id="map" style="width: 300px; height: 200px;"></div>
       <a href=""
-         tal:attributes="href string:http://maps.google.com/maps?q=${latlng}(${context/pretty_title_or_id})"
+	 tal:define="mq python:modules['ZTUtils'].make_query;
+		     charset site_properties/default_charset|string:utf-8;
+		     value string:$latlng(${context/pretty_title_or_id});
+		     query python:mq(q=value.encode(charset));"
+         tal:attributes="href string:http://maps.google.com/maps?$query"
          i18n:translate="label_larger_map">
         View larger map
       </a>
