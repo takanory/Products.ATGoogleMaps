@@ -33,7 +33,8 @@
     <div tal:replace="structure provider:plone.abovecontentbody" />
 
     <!-- gmarker -->
-    <tal:gmarker tal:define="folderContents context/getFolderContents">
+    <div class="gmarkerBox"
+	 tal:define="folderContents context/getFolderContents">
       <ul class="gmarkerBlock">
 	<tal:entry tal:repeat="item folderContents">
           <li id = ""
@@ -48,38 +49,38 @@
 	       tal:attributes="class string:${item_wf_state_class}">
 	      Marker title
             </a>
+
+            <div id="" class="gmarkerContent"
+		 tal:define="marker item/getObject;
+			     index repeat/item/index;"
+		 tal:attributes="id string:infowindow_html_${index}">
+	      <h2 class="documentFirstHeading">
+		<metal:field use-macro="python:marker.widget('title', mode='view')">
+		  Title
+		</metal:field>
+	      </h2>
+
+	      <span tal:replace="structure marker/infowindow" />
+
+	      <div class="documentActions"
+		   tal:condition="python:False">
+		<ul>
+		  <li>
+		    <a href=""
+		       tal:attributes="href marker/absolute_url"
+		       i18n:translate="" i18n:domain="plone">
+		      View
+		    </a>
+		  </li>
+		</ul>
+	      </div>
+	    </div>
 	  </li>
 	</tal:entry>
       </ul>
-      <br style="clear: both;" />
+    </div>
 
-      <tal:entry tal:repeat="item folderContents">
-        <div id="" style="display: none;"
-	     tal:define="marker item/getObject;
-			 index repeat/item/index;"
-	     tal:attributes="id string:infowindow_html_${index}">
-	  <h2 class="documentFirstHeading">
-	    <metal:field use-macro="python:marker.widget('title', mode='view')">
-	      Title
-	    </metal:field>
-	  </h2>
-
-	  <span tal:replace="structure marker/infowindow" />
-
-	  <div class="documentActions">
-	    <ul>
-	      <li>
-		<a href=""
-		   tal:attributes="href marker/absolute_url"
-		   i18n:translate="" i18n:domain="plone">
-		  View
-		</a>
-	      </li>
-	    </ul>
-	  </div>
-	</div>
-      </tal:entry>
-    </tal:gmarker>
+    <br style="clear: both;" />
 
     <div id="map_canvas"
          tal:attributes="style string:height: ${context/height}px;;">
