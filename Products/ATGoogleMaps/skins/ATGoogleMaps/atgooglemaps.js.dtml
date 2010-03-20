@@ -1,7 +1,7 @@
 function createMap(map_id, lat, lng, zoom, mapType, typeCtl, navCtl) {
     var options = {
 	zoom: zoom,
-	center: new google.maps.LatLng(lat, lng),
+	center: new google.maps.LatLng(lat, lng)
     };
     options.mapTypeId = eval("google.maps.MapTypeId." + mapType);
 
