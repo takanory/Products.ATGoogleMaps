@@ -1,8 +1,10 @@
 Changelog
 =========
 
-1.0 (xxxx-xx-xx)
+0.6 (2010-03-24)
 ----------------
+- Created recipe with ZopeSkel [Manabu Terada]
+- Initial release for Plone 3
+- `Google Maps JavaScript API V3`_ support (API KEY is UNNECESSARY!)
 
-- Created recipe with ZopeSkel
-  [Manabu Terada]
+.. _`Google Maps JavaScript API V3`: http://code.google.com/apis/maps/documentation/v3/
