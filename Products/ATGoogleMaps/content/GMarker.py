@@ -21,7 +21,7 @@ from Products.ATGoogleMaps.widget import LatLngWidget
 
 schema = Schema((
     StringField('address',
-                widget=IntegerWidget(
+                widget=StringWidget(
                     label='Address',
                     label_msgid='label_address',
                     description_msgid='help_address',
@@ -30,7 +30,7 @@ schema = Schema((
                     )
                 ),
     StringField('phone',
-                widget=IntegerWidget(
+                widget=StringWidget(
                     label='Phone',
                     label_msgid='label_phone',
                     description_msgid='help_phone',
@@ -39,7 +39,7 @@ schema = Schema((
                     )
                 ),
     StringField('url',
-                widget=IntegerWidget(
+                widget=StringWidget(
                    label='URL',
                    label_msgid='label_url',
                    description_msgid='help_url',
@@ -48,7 +48,7 @@ schema = Schema((
                    )
                 ),
     StringField('imageurl',
-                widget=IntegerWidget(
+                widget=StringWidget(
                     label='Image URL',
                     label_msgid='label_image_url',
                     description_msgid='help_image_url',
