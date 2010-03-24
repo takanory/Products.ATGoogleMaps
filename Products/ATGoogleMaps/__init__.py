@@ -20,9 +20,6 @@ ATGoogleMapsMessageFactory = MessageFactory('Products.ATGoogleMaps')
 
 # from Products.CMFCore.permissions import setDefaultRoles
 
-# setDefaultRoles("ATGoogleMaps: Add GMarker", ('Manager', 'Contributor'))
-
-
 def initialize(context):
     """Initializer called when used as a Zope 2 product.
 
@@ -32,19 +29,7 @@ def initialize(context):
     Here, we call the Archetypes machinery to register our content types
     with Zope and the CMF.
     """
-    # import content
-    # 
-    # contentTypes, constructors, ftis = \
-    #             process_types(listTypes(PROJECTNAME), PROJECTNAME)
-    # print 'contentTypes:', contentTypes
-    # for i in range(0, len(contentTypes)):
-    #     permission = "%s: Add %s" % (PROJECTNAME, ftis[i]['meta_type'])
-    #     ContentInit("%s: %s" % (PROJECTNAME, ftis[i]['meta_type']),
-    #             content_types=contentTypes,
-    #             permission=permission,
-    #             extra_constructors=constructors,
-    #             ).initialize(context)
-    
+
     # Retrieve the content types that have been registered with Archetypes
     # This happens when the content type is imported and the registerType()
     # call in the content type's module is invoked. Actually, this happens
