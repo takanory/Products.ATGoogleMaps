@@ -1,2 +1,2 @@
 recursive-include Products *
-global-exclude *pyc
+global-exclude *pyc *~
