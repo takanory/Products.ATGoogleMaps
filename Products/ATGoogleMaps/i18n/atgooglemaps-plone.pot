@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ATGoogleMaps\n"
-"POT-Creation-Date: 2010-02-25 21:20+0900\n"
+"POT-Creation-Date: 2010-04-06 21:52+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator:\n"
 "Language-Team:\n"
@@ -17,35 +17,45 @@ msgstr ""
 
 #. Default: "Map"
 #: ./profiles/default/types/GMap.xml
-msgid "GMap"
+msgid "Map"
 msgstr ""
 
-#. Default: "Map uses Google Maps API"
+#. Default: "A map uses Google Maps JavaScript API V3."
 #: ./profiles/default/types/GMap.xml
-msgid "GMap_help"
+msgid "A map uses Google Maps JavaScript API V3."
 msgstr ""
 
-#. Default: "control settings"
+#. Default: "Control"
 #: ./content/GMap.py
-msgid "control settings"
+msgid "label_schema_control"
 msgstr ""
 
 #. Default: "Marker"
 #: ./profiles/default/types/GMarker.xml
-msgid "GMarker"
+msgid "Marker"
 msgstr ""
 
-#. Default: "Marker to display on a map"
+#. Default: "A marker displays it on a map with infowindow."
 #: ./profiles/default/types/GMarker.xml
-msgid "GMarker_help"
+msgid "A marker displays it on a map with infowindow."
 msgstr ""
 
-#. Default: "GPolyline"
+#. Default: "Polyline"
 #: ./profiles/default/types/GPolyline.xml
-msgid "GPolyline"
+msgid "Polyline"
 msgstr ""
 
-#. Default: "Drow polyline in Google Maps"
+#. Default: "A polyline displayis it on a map."
 #: ./profiles/default/types/GPolyline.xml
-msgid "GPolyline_help"
+msgid "A polyline displayis it on a map."
+msgstr ""
+
+#. Default: "Polygon"
+#: ./content/GPolygon.py
+msgid "Polygon"
+msgstr ""
+
+#. Default: "A polygon displayis it on a map."
+#: ./profiles/default/types/GPolygon.xml
+msgid "A polygon displayis it on a map."
 msgstr ""

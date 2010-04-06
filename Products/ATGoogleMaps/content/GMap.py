@@ -84,7 +84,7 @@ schema = Schema((
 	            description_msgid='help_map_type_control',
 	            i18n_domain='googlemaps',
 	        ),
-	        schemata='control settings',
+	        schemata='control',
 	    ),
     StringField('navigationControl',
 	        vocabulary=(('DEFAULT', 'Default'),
@@ -101,7 +101,7 @@ schema = Schema((
 	            description_msgid='help_navigation_control',
 	            i18n_domain='googlemaps',
 	        ),
-	        schemata='control settings',
+	        schemata='control',
 	    ),
     ),)
 gmap_schema = getattr(ATFolder, 'schema', Schema(())).copy() + schema.copy()

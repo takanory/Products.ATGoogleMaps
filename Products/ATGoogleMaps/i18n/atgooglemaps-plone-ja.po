@@ -2,8 +2,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ATGoogleMaps\n"
-"POT-Creation-Date: 2010-02-25 21:20+0900\n"
-"PO-Revision-Date: 2010-02-25 21:21+0900\n"
+"POT-Creation-Date: 2010-04-06 21:52+0900\n"
+"PO-Revision-Date: 2010-04-06 21:52+0900\n"
 "Last-Translator: takanori <takanori@takanory.net>\n"
 "Language-Team: takanory.net [http://takanory.net]\n"
 "MIME-Version: 1.0\n"
@@ -18,36 +18,46 @@ msgstr ""
 
 #. Default: "Map"
 #: ./profiles/default/types/GMap.xml
-msgid "GMap"
+msgid "Map"
 msgstr "地図"
 
-#. Default: "Map uses Google Maps API"
+#. Default: "A map uses Google Maps JavaScript API V3."
 #: ./profiles/default/types/GMap.xml
-msgid "GMap_help"
-msgstr "Google マップ API を使用した地図"
+msgid "A map uses Google Maps JavaScript API V3."
+msgstr "Google Maps API を使用した地図"
 
-#. Default: "control settings"
+#. Default: "Control"
 #: ./content/GMap.py
-msgid "control settings"
-msgstr "制御パネル設定"
+msgid "label_schema_control"
+msgstr "コントロール"
 
 #. Default: "Marker"
 #: ./profiles/default/types/GMarker.xml
-msgid "GMarker"
+msgid "Marker"
 msgstr "マーカー"
 
-#. Default: "Marker to display on a map"
+#. Default: "A marker displays it on a map with infowindow."
 #: ./profiles/default/types/GMarker.xml
-msgid "GMarker_help"
-msgstr "地図上に表示するマーカー"
+msgid "A marker displays it on a map with infowindow."
+msgstr "地図上に情報ウィンドウと表示するマーカー"
 
-#. Default: "GPolyline"
+#. Default: "Polyline"
 #: ./content/GPolyline.py
-msgid "GPolyline"
+msgid "Polyline"
 msgstr "折れ線"
 
-#. Default: "Drow polyline in Google Maps"
+#. Default: "A polyline displayis it on a map."
 #: ./profiles/default/types/GPolyline.xml
-msgid "GPolyline_help"
-msgstr "地図に描画できる折れ線"
+msgid "A polyline displayis it on a map."
+msgstr "地図上に描画できる折れ線"
+
+#. Default: "Polygon"
+#: ./content/GPolygon.py
+msgid "Polygon"
+msgstr "ポリゴン"
+
+#. Default: "A polygon displayis it on a map."
+#: ./profiles/default/types/GPolygon.xml
+msgid "A polygon displayis it on a map."
+msgstr "地図に描画できるポリゴン(多角形)"
 
