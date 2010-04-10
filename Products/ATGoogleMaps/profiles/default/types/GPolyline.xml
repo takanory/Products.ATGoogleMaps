@@ -1,22 +1,20 @@
 <?xml version="1.0"?>
-<object name="GMap"
+<object name="GPolyline"
    meta_type="Factory-based Type Information with dynamic views"
-   xmlns:i18n="http://xml.zope.org/namespaces/i18n">
- <property name="title">Map</property>
- <property name="description">A map uses Google Maps JavaScript API V3.</property>
- <property name="content_icon">gmap_icon.gif</property>
- <property name="content_meta_type">GMap</property>
+   i18n:domain="plone" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+ <property name="title" i18n:translate="GPolyline">Polyline</property>
+ <property name="description"
+      i18n:translate="GPolyline_help">Polyline to display on a map</property>
+ <property name="content_icon">gpolyline_icon.gif</property>
+ <property name="content_meta_type">GPolyline</property>
  <property name="product">ATGoogleMaps</property>
- <property name="factory">addGMap</property>
- <property name="immediate_view">base_view</property>
- <property name="global_allow">True</property>
- <property name="filter_content_types">True</property>
- <property name="allowed_content_types">
-  <element value="GMarker"/>
-  <element value="GPolyline"/>
- </property>
+ <property name="factory">addGPolyline</property>
+ <property name="immediate_view">gpolyline_view</property>
+ <property name="global_allow">False</property>
+ <property name="filter_content_types">False</property>
+ <property name="allowed_content_types" />
  <property name="allow_discussion">False</property>
- <property name="default_view">gmap_view</property>
+ <property name="default_view">gpolyline_view</property>
  <property name="view_methods">
   <!-- <element value="banner_view"/> -->
  </property>

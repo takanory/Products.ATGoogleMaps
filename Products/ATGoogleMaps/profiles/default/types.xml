@@ -11,4 +11,6 @@
 	    meta_type="Factory-based Type Information with dynamic views"/>
 	 <object name="GMarker"
 	    meta_type="Factory-based Type Information with dynamic views"/>
+	 <object name="GPolyline"
+	    meta_type="Factory-based Type Information with dynamic views"/>
 </object>

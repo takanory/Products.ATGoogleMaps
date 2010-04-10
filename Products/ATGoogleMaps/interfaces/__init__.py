@@ -6,3 +6,6 @@ class IGMap(Interface):
 
 class IGMarker(Interface):
     """"""
+
+class IGPolyline(Interface):
+    """"""

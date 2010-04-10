@@ -11,5 +11,10 @@
      <role name="Owner" />
      <role name="Contributor" />
    </permission>
+   <permission name="ATGoogleMaps: Add GPolyline" acquire="True">
+     <role name="Manager" />
+     <role name="Owner" />
+     <role name="Contributor" />
+   </permission>
  </permissions>
 </rolemap>

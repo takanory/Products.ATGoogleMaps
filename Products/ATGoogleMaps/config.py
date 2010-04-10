@@ -5,6 +5,7 @@ PROJECTNAME = 'ATGoogleMaps'
 
 ADD_PERMISSIONS = {
     # -*- extra stuff goes here -*-
-    'GMap' : 'ATGoogleMaps: Add GMap',
-    'GMarker' : 'ATGoogleMaps: Add GMarker',
+    'GMap'      : 'ATGoogleMaps: Add GMap',
+    'GMarker'   : 'ATGoogleMaps: Add GMarker',
+    'GPolyline' : 'ATGoogleMaps: Add GPolyline',
 }
