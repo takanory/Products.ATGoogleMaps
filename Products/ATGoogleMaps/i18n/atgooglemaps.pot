@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ATGoogleMaps\n"
-"POT-Creation-Date: 2010-02-24 20:26+0900\n"
+"POT-Creation-Date: 2010-04-10 12:00+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid "label_longitude"
 msgstr ""
 
-#. Default: "Enter the address or the landmark. A center point in this map is set as a latitude and longitude.Longitude"
+#. Default: "Input an address or a landmark and can search it. A latitude and longitude in the position of the marker is set. Drag a marker and can move it."
 #: ./skins/googlemaps/latlng_widget.py
 msgid "help_latlng_map"
 msgstr ""
@@ -38,36 +38,6 @@ msgstr ""
 #. Default: "View larger map"
 #: ./skins/googlemaps/gmarker_view.pt
 msgid "label_larger_map"
-msgstr ""
-
-#. Default: "Google Maps API Key settings for this site."
-#: ./skins/googlemaps/prefs_gmap_form.cpt
-msgid "description_atgooglemaps_settings"
-msgstr ""
-
-#. Default: "ATGoogleMaps details"
-#: ./skins/googlemaps/prefs_gmap_form.cpt
-msgid "legend_atgooglemaps_details"
-msgstr ""
-
-#. Default: "Google Maps API Key"
-#: ./skins/googlemaps/prefs_gmap_form.cpt
-msgid "label_api_key"
-msgstr ""
-
-#. Default: "Access a sign up page, and please generate API Key."
-#: ./skins/googlemaps/prefs_gmap_form.cpt
-msgid "help_api_key"
-msgstr ""
-
-#. Default: "Google Maps Server"
-#: ./content/GMap.py
-msgid "label_server"
-msgstr ""
-
-#. Default: "Select a Google Maps server to use."
-#: ./content/GMap.py
-msgid "help_server"
 msgstr ""
 
 #. Default: "Height"
@@ -87,7 +57,6 @@ msgstr ""
 
 #. Default: "Center of this map."
 #: ./content/GMap.py
-#. latitude
 msgid "help_center"
 msgstr ""
 

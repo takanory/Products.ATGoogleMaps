@@ -1,4 +1,4 @@
-# takanori <takanori@takanory.net>, 2006.
+# takanori <takanori@takanory.net>, 2006-2010.
 msgid ""
 msgstr ""
 "Project-Id-Version: ATGoogleMaps\n"
@@ -26,7 +26,7 @@ msgstr "緯度"
 msgid "label_longitude"
 msgstr "経度"
 
-#. Default: "Enter the address or the landmark. A center point in this map is set as a latitude and longitude."
+#. Default: "Input an address or a landmark and can search it. A latitude and longitude in the position of the marker is set. Drag a marker and can move it."
 #: ./skins/googlemaps/latlng_widget.py
 msgid "help_latlng_map"
 msgstr "住所やランドマークを入力して検索できます。マーカー位置の緯度経度が設定されます。また、マーカーをドラッグして移動させることが可能です。"
@@ -41,35 +41,10 @@ msgstr "Google Earth で表示"
 msgid "label_larger_map"
 msgstr "拡大地図を表示"
 
-#. Default: "Google Maps API Key settings for this site."
-#: ./skins/googlemaps/prefs_gmap_form.cpt
-msgid "description_atgooglemaps_settings"
-msgstr "このサイト用の Google Maps API Key を設定してください。"
-
 #. Default: "ATGoogleMaps details"
 #: ./skins/googlemaps/prefs_gmap_form.cpt
 msgid "legend_atgooglemaps_details"
 msgstr "ATGoogleMaps の詳細"
-
-#. Default: "Google Maps API Key"
-#: ./skins/googlemaps/prefs_gmap_form.cpt
-msgid "label_api_key"
-msgstr "Google Maps API Key"
-
-#. Default: "Access a sign up page, and please generate API Key."
-#: ./skins/googlemaps/prefs_gmap_form.cpt
-msgid "help_api_key"
-msgstr "ページにアクセスして API Key を生成してください。"
-
-#. Default: "Google Maps Server"
-#: ./content/GMap.py
-msgid "label_server"
-msgstr "Google マップサーバ"
-
-#. Default: "Select a Google Maps server to use."
-#: ./content/GMap.py
-msgid "help_server"
-msgstr "使用する Google マップのサーバを選択します。"
 
 #. Default: "Height"
 #: ./content/GMap.py
@@ -88,7 +63,6 @@ msgstr "中心座標"
 
 #. Default: "Center of this map."
 #: ./content/GMap.py
-#. latitude
 msgid "help_center"
 msgstr "地図の中心点となる位置の座標を指定してください。"
 
@@ -232,7 +206,7 @@ msgstr ""
 msgid "label_point"
 msgstr "マーカー位置"
 
-#. Default: ""
+#. Default: "Point of this marker."
 #: ./content/GMarker.py
 msgid "help_point"
 msgstr "このマーカーの座標を指定してください。"

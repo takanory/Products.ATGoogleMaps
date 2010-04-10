@@ -56,8 +56,9 @@ g/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 	<div class="formHelp" id="latlng_map_help"
 	     i18n:domain="googlemaps"
 	     i18n:translate="help_latlng_map">
-	  Enter the address or the landmark.
-	  A center point in this map is set as a latitude and longitude.
+	  Input an address or a landmark and can search it.
+	  A latitude and longitude in the position of the marker is set.
+	  Drag a marker and can move it.
 	</div>
 
         <input type="text" size="50" id="q"/>
