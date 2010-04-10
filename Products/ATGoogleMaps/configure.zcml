@@ -21,7 +21,7 @@
       name="default"
       title="ATGoogleMaps"
       directory="profiles/default"
-      description=""
+      description="ATContentTypes-based Google Maps v3 product for Plone."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
   
