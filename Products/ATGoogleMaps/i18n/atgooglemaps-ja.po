@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ATGoogleMaps\n"
 "POT-Creation-Date: 2010-02-24 20:26+0900\n"
-"PO-Revision-Date: 2010-02-24 20:33+0900\n"
+"PO-Revision-Date: 2010-04-09 12:54+0900\n"
 "Last-Translator: takanori <takanori@takanory.net>\n"
 "Language-Team: takanory.net [http://takanory.net]\n"
 "MIME-Version: 1.0\n"
@@ -29,7 +29,7 @@ msgstr "経度"
 #. Default: "Enter the address or the landmark. A center point in this map is set as a latitude and longitude."
 #: ./skins/googlemaps/latlng_widget.py
 msgid "help_latlng_map"
-msgstr "住所やランドマークを入力して検索できます。地図の中心点が緯度経度として設定されます。"
+msgstr "住所やランドマークを入力して検索できます。マーカー位置の緯度経度が設定されます。また、マーカーをドラッグして移動させることが可能です。"
 
 #. Default: "View in Google Earth"
 #: ./skins/googlemaps/gmap_view.pt
@@ -79,7 +79,7 @@ msgstr "高さ"
 #. Default: "Height(pixel) of this map."
 #: ./content/GMap.py
 msgid "help_height"
-msgstr "表示する地図の高さを pixel で指定してします。"
+msgstr "表示する地図の高さを pixel で指定してください。"
 
 #. Default: "Center"
 #: ./content/GMap.py
@@ -100,7 +100,7 @@ msgstr "縮尺"
 #. Default: "Select a zoom level."
 #: ./content/GMap.py
 msgid "help_zoom"
-msgstr "地図の縮尺を指定します。数字が大きいほうがより詳細な地図になります。"
+msgstr "地図の縮尺を指定してください。数字が大きいほうがより詳細な地図になります。"
 
 #. Default: "Map Type"
 #: ./content/GMap.py
@@ -110,7 +110,7 @@ msgstr "地図の種類"
 #. Default: "Select a default map type."
 #: ./content/GMap.py
 msgid "help_map_type"
-msgstr "初期状態の地図の種類を選択してください"
+msgstr "初期状態の地図の種類を選択してください。"
 
 #. Default: "Map+Satellite"
 #: ./content/GMap.py
