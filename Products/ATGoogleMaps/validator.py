@@ -2,13 +2,14 @@ from Globals import InitializeClass
 from Products.validation import validation
 from Products.validation.interfaces.IValidator import IValidator
 from Products.CMFCore.utils import getToolByName
+from zope.interface import implements
 
 class LatLngValidator:
     """
     Latitude and Longitude validator. To be used with LatLngField.
     """
 
-    __implements__ = IValidator
+    implements(IValidator)
 
     def __init__(self, name, title='', description=''):
         self.name = name

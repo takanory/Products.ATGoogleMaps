@@ -34,7 +34,8 @@
 
     <!-- gmarker -->
     <div class="gmarkerBox"
-	 tal:define="folderContents context/getFolderContents">
+	 tal:define="folderContents context/getFolderContents;
+	             normalizeString nocall:context/@@plone/normalizeString;">
       <ul class="gmarkerBlock">
 	<tal:entry tal:repeat="item folderContents">
           <li id = ""

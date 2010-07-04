@@ -8,7 +8,6 @@ import validator
 
 class LatLngField(ObjectField):
     """A field that store latitude and longitude value"""
-    __implements__ = ObjectField.__implements__
 
     _properties = Field._properties.copy()
     _properties.update({

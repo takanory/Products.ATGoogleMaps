@@ -19,8 +19,8 @@ from Products.ATGoogleMaps.config import *
 from Products.ATGoogleMaps.field import LatLngField
 from Products.ATGoogleMaps.widget import LatLngWidget
 
-zoom_vocaburary = range(23)
-zoom_vocaburary.reverse()
+zoom_vocabulary = [str(x) for x in range(23)]
+zoom_vocabulary.reverse()
 
 schema = Schema((
     IntegerField('height',
@@ -47,7 +47,7 @@ schema = Schema((
 	    ),
     IntegerField('zoom',
 	        default=15,
-	        vocabulary=zoom_vocaburary,
+	        vocabulary=zoom_vocabulary,
 	        widget=SelectionWidget(
 	            label='Zoom',
 	            label_msgid='label_zoom',
