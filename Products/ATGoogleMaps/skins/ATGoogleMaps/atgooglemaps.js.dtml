@@ -84,3 +84,22 @@ function createMarker(map, lat, lng, index, title, draggable) {
 
     return marker;
 }
+
+function createPolyline(map, color, opacity, weight, title) {
+    var polyline = new google.maps.Polyline({
+        strokeColor: color,
+        strokeOpacity: opacity,
+        strokeWeight: weight
+    });
+
+    polyline.setMap(map);
+    return polyline;
+}
+
+function createPath(array) {
+    var mvcArray = new google.maps.MVCArray();
+    for (var i = 0; i < array.length; i++) {
+        mvcArray.push(new google.maps.LatLng(array[i][0], array[i][1]));
+    }
+    return mvcArray;
+}

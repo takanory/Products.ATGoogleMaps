@@ -34,7 +34,7 @@
 
     <!-- gmarker -->
     <div class="gmarkerBox"
-	 tal:define="folderContents context/getFolderContents;
+	 tal:define="folderContents python:context.getFolderContents({'portal_type': 'GMarker'});
 	             normalizeString nocall:context/@@plone/normalizeString;">
       <ul class="gmarkerBlock">
 	<tal:entry tal:repeat="item folderContents">
