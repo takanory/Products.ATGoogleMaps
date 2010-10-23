@@ -48,10 +48,8 @@
         View larger map
       </a>
 
-      <div tal:condition="context/streetView">
-        <iframe width="300" height="240" frameborder="0" scrolling="no" src=""
-                tal:attributes="src string:http://maps.google.com/maps/sv?cbll=${latlng}"></iframe>
-      </div>
+      <div tal:condition="context/streetView"
+	   id="pano" style="width: 300px; height: 240px;"></div>
     </div>
 
     <img src=""
