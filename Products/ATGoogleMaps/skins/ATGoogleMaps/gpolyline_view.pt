@@ -1,0 +1,99 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="googlemaps">
+
+<head>
+  <metal:block fill-slot="javascript_head_slot"
+               tal:condition="context/point | nothing">
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <span tal:replace="structure context/gmarker" />
+  </metal:block>
+</head>
+
+<body>
+
+<metal:main fill-slot="main">
+  <tal:main-macro metal:define-macro="main">
+
+    <div tal:replace="structure provider:plone.abovecontenttitle" />
+
+    <h1 class="documentFirstHeading"> 
+      <metal:field use-macro="python:context.widget('title', mode='view')">
+        Title
+      </metal:field>
+    </h1>
+
+    <div tal:replace="structure provider:plone.belowcontenttitle" />
+
+    <p class="documentDescription">
+      <metal:field use-macro="python:context.widget('description', mode='view')">
+        Description
+      </metal:field>
+    </p>
+
+    <div tal:replace="structure provider:plone.abovecontentbody" />
+
+    <div style="float: right; margin: 5px;"
+         tal:condition="context/point | nothing"
+	 tal:define="latlng string:${context/point/latitude},${context/point/longitude}">
+      <div id="map" style="width: 300px; height: 200px;"></div>
+      <a href=""
+	 tal:define="mq python:modules['ZTUtils'].make_query;
+		     charset site_properties/default_charset|string:utf-8;
+		     value string:$latlng(${context/pretty_title_or_id});
+		     query python:mq(q=value.encode(charset));"
+         tal:attributes="href string:http://maps.google.com/maps?$query"
+         i18n:translate="label_larger_map">
+        View larger map
+      </a>
+
+      <div tal:condition="context/streetView">
+        <iframe width="300" height="240" frameborder="0" scrolling="no" src=""
+                tal:attributes="src string:http://maps.google.com/maps/sv?cbll=${latlng}"></iframe>
+      </div>
+    </div>
+
+    <img src=""
+         tal:condition="context/imageurl"
+         tal:attributes="src context/imageurl" />
+
+    <div tal:condition="context/address">
+      <label i18n:translate="label_address">Address</label>
+      <metal:field use-macro="python:context.widget('address', mode='view')">
+        Address
+      </metal:field>
+    </div>
+
+    <div tal:condition="context/phone">
+      <label i18n:translate="label_phone">Phone</label>
+      <metal:field use-macro="python:context.widget('phone', mode='view')">
+        Phone
+      </metal:field>
+    </div>
+
+    <div tal:condition="context/url">
+      <a href=""
+         tal:attributes="href context/url">
+	<metal:field use-macro="python:here.widget('url', mode='view')">
+	  Link
+	</metal:field>
+      </a>
+    </div>
+
+    <br style="clear: both;"/>
+
+    <metal:field use-macro="python:here.widget('text', mode='view')">
+      Body text
+    </metal:field>
+
+    <div metal:use-macro="context/document_relateditems/macros/relatedItems">
+      show related items if they exist
+    </div>
+    
+    <div tal:replace="structure provider:plone.belowcontentbody" />
+  </tal:main-macro>
+</metal:main>
+
+</body>
+</html>

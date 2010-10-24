@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.or
+g/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      i18n:domain="plone">
+
+<body>
+
+<!-- Polyline Widgets -->
+<metal:view_macro define-macro="view"
+                  tal:replace="structure accessor" />
+
+<metal:define define-macro="edit">
+  <metal:use use-macro="field_macro | context/widgets/field/macros/edit">
+    <metal:fill metal:fill-slot="widget_body">
+
+      <tal:block tal:define="latitude value/latitude | string:35.7317;
+			     longitude value/longitude | string:139.7278;
+			     zoom python:test(value, '14', '4');">
+
+	<span tal:replace="structure context/polyline_map" />
+      
+	<div class="formHelp" id="polyline_map_help"
+	     i18n:domain="googlemaps"
+	     i18n:translate="help_polyline_map">
+	  Input an address or a landmark and can search it.
+	  A latitude and longitude in the position of the marker is set.
+	  Drag a marker and can move it.
+	</div>
+
+        <input tal:condition="python:nothing" type="text" size="50" id="q"/>
+        <input class="standalone" type="button" id="s"
+	       value="Search"
+	       onclick="geocode();"
+	       tal:condition="python:nothing" 
+	       i18n:domain="plone"
+	       i18n:attributes="value label_search;"
+	       />
+
+	<textarea name="hoge"></textarea>
+        <div id="map_canvas" style="height: 500px;">
+	<div id="crosshair"></div>
+        </div>
+
+      </tal:block>
+    </metal:fill>
+  </metal:use>
+</metal:define>
+
+<div metal:define-macro="search">
+  <div metal:use-macro="context/widgets/string/macros/edit" />
+</div>
+
+</body>
+
+</html>

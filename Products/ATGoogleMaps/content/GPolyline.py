@@ -16,6 +16,7 @@ from Products.ATContentTypes.configuration import zconf
 
 from Products.ATGoogleMaps.interfaces import IGPolyline
 from Products.ATGoogleMaps.config import *
+from Products.ATGoogleMaps.widget import PolylineWidget
 
 schema = Schema((
     StringField('color',
@@ -49,7 +50,7 @@ schema = Schema((
                      )
                  ),
     LinesField('coordinates',
-               widget=LinesWidget(
+               widget=PolylineWidget(
                    label='Coordinates',
                    label_msgid='label_path',
                    description_msgid='help_path',
