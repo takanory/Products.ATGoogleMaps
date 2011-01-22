@@ -27,10 +27,10 @@ g/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 	  Please input a coordinates.
 	</div>
 
-	<textarea name=""
+	<input type="hidden"
 		  tal:attributes="name string:${fieldName}:lines;
-				  id fieldName;"
-		  tal:content="python:value and '\n'.join(value) or ''"></textarea>
+				  id fieldName;
+				  value value;">
         <div id="map_canvas" style="height: 500px;">
 	<div id="crosshair"></div>
         </div>
