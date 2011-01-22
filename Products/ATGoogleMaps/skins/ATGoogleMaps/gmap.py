@@ -3,9 +3,10 @@ site_encoding =  context.plone_utils.getSiteEncoding()
 def add_polylines(js, items):
     for index in range(len(items)):
         polyline = items[index].getObject()
-        js.append('  var polyline_%d = createPolyline(map, "%s", %f, %d, "%s");'
-                  % (index, polyline.color, polyline.opacity, polyline.weight, polyline.title))
-        js.append('  polyline_%d.setPath(createPath(%s));' % (index, polyline.getCoordinatesArray()))
+        if len(polyline.coordinates) > 1:
+            js.append('  var polyline_%d = createPolyline(map, "%s", %f, %d, "%s");'
+                      % (index, polyline.color, polyline.opacity, polyline.weight, polyline.title))
+            js.append('  polyline_%d.setPath(createPath(%s));' % (index, polyline.getCoordinatesArray()))
     
 def add_markers(js, items):
     for index in range(len(items)):
