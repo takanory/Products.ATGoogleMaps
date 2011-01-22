@@ -24,21 +24,13 @@ g/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 	<div class="formHelp" id="polyline_map_help"
 	     i18n:domain="googlemaps"
 	     i18n:translate="help_polyline_map">
-	  Input an address or a landmark and can search it.
-	  A latitude and longitude in the position of the marker is set.
-	  Drag a marker and can move it.
+	  Please input a coordinates.
 	</div>
 
-        <input tal:condition="python:nothing" type="text" size="50" id="q"/>
-        <input class="standalone" type="button" id="s"
-	       value="Search"
-	       onclick="geocode();"
-	       tal:condition="python:nothing" 
-	       i18n:domain="plone"
-	       i18n:attributes="value label_search;"
-	       />
-
-	<textarea name="hoge"></textarea>
+	<textarea name=""
+		  tal:attributes="name string:${fieldName}:lines;
+				  id fieldName;"
+		  tal:content="python:value and '\n'.join(value) or ''"></textarea>
         <div id="map_canvas" style="height: 500px;">
 	<div id="crosshair"></div>
         </div>

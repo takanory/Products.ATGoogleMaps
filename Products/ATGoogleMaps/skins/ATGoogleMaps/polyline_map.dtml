@@ -13,18 +13,26 @@ function initialize() {
   poly = new google.maps.Polyline({
     strokeWeight: 3
   });
+<dtml-in value>
+  addPoint(new google.maps.LatLng(<dtml-var sequence-item>));
+</dtml-in>
+  setPath2Field();
   poly.setMap(map);
   poly.setPath(new google.maps.MVCArray([path]));
 
-  google.maps.event.addListener(map, 'click', addPoint);
+  google.maps.event.addListener(map, 'click', addPointEvent);
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 
-function addPoint(event) {
-  path.insertAt(path.length, event.latLng);
+function addPointEvent(event) {
+  addPoint(event.latLng)
+}
+
+function addPoint(latLng) {
+  path.insertAt(path.length, latLng);
 
   var marker = new google.maps.Marker({
-    position: event.latLng,
+    position: latLng,
     map: map,
     draggable: true
   });
@@ -55,6 +63,6 @@ function setPath2Field() {
     var point = path.getAt(i);
     path_str += point.lat() + "," + point.lng() + "\n";
   } 
-  document.edit_form["hoge"].value = path_str;
+  document.edit_form["<dtml-var fieldName>"].value = path_str;
 }
 </script>

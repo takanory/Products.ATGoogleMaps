@@ -52,8 +52,8 @@ schema = Schema((
     LinesField('coordinates',
                widget=PolylineWidget(
                    label='Coordinates',
-                   label_msgid='label_path',
-                   description_msgid='help_path',
+                   label_msgid='label_coordinates',
+                   description_msgid='help_coordinates',
                    i18n_domain='googlemaps',
                    )
                ),
