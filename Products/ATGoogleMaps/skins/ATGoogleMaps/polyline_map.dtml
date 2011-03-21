@@ -6,17 +6,24 @@ var markers = [];
 var path = new google.maps.MVCArray;
 
 function initialize() {
+  var bounds = new google.maps.LatLngBounds();
   var lat = &dtml-latitude;;
   var lng = &dtml-longitude;;
+  var latlng = null;
   map = createMap("map_canvas", lat, lng, 10, "ROADMAP", "DROPDOWN_MENU");
   
   poly = new google.maps.Polyline({
     strokeWeight: 3
   });
 <dtml-in value>
-  addPoint(new google.maps.LatLng(<dtml-var sequence-item>));
+  latlng = new google.maps.LatLng(<dtml-var sequence-item>);
+  addPoint(latlng);
+  bounds.extend(latlng);
 </dtml-in>
   setPath2Field();
+  if (bounds.isEmpty() == false) {
+    map.fitBounds(bounds);
+  }
   poly.setMap(map);
   poly.setPath(new google.maps.MVCArray([path]));
 

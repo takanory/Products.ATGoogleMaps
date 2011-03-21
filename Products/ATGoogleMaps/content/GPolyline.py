@@ -89,4 +89,15 @@ class GPolyline(ATCTContent):
         coordinates_array = coordinates_array[:-1] + "]"
         return coordinates_array
 
+    def getStaticMap(self):
+        '''
+        get Google Static Map URL
+        '''
+        color = "0x%s%02x" % (self.color[1:], int(self.opacity * 255))
+        staticmap = "http://maps.google.com/maps/api/staticmap?path=color:%s|weight:%d" % (color, self.weight)
+        for coordinate in self.coordinates:
+            staticmap += "|%s" % coordinate
+        staticmap += "&size=640x640&sensor=false"
+        return staticmap
+
 registerType(GPolyline, PROJECTNAME)
