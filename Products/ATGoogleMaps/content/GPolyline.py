@@ -20,7 +20,7 @@ from Products.ATGoogleMaps.widget import PolylineWidget
 
 schema = Schema((
     StringField('color',
-                default="#ff0000",
+                default="#0000ff",
                 widget=StringWidget(
                     label='Color',
                     label_msgid='label_color',
@@ -30,7 +30,7 @@ schema = Schema((
                     )
                 ),
     FloatField('opacity',
-               default=1.0,
+               default=0.5,
                widget=StringWidget(
                    label='Opacity',
                    label_msgid='label_opacity',
