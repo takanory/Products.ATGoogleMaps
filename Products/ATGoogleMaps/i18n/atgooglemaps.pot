@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ATGoogleMaps\n"
-"POT-Creation-Date: 2010-04-10 12:00+0900\n"
+"POT-Creation-Date: 2011-03-26 16:17+0900\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -265,22 +265,33 @@ msgstr ""
 msgid "help_color"
 msgstr ""
 
-#. Default: "Width"
-#: ./content/GPolyline.py
-msgid "label_width"
-msgstr ""
-
-#. Default: "Select a width of the line in pixels."
-#: ./content/GPolyline.py
-msgid "help_width"            
-msgstr ""
-
 #. Default: "Opacity"
 #: ./content/GPolyline.py
 msgid "label_opacity"
 msgstr ""
 
-#. Default: ""
+#. Default: "Enter stroke opacity between 0.0 and 1.0."
 #: ./content/GPolyline.py
 msgid "help_opacity"
 msgstr ""
+
+#. Default: "Weight"
+#: ./content/GPolyline.py
+msgid "label_weight"
+msgstr ""
+
+#. Default: "Enter stroke weight in pixels."
+#: ./content/GPolyline.py
+msgid "help_weight"
+msgstr ""
+
+#. Default: "Coordinates"
+#: ./content/GPolyline.py
+msgid "label_coordinates"
+msgstr ""
+
+#. Default: "Set stroke coordinates."
+#: ./content/GPolyline.py
+msgid "help_coordinates"      
+msgstr ""
+
