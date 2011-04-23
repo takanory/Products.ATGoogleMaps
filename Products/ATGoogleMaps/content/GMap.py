@@ -103,6 +103,15 @@ schema = Schema((
 	        ),
 	        schemata='control',
 	    ),
+    BooleanField('fitBounds',
+                 widget=BooleanWidget(
+                     label="Fit Bounds",
+                     label_msgid="label_fit_bounds",
+                     description="Auto fit with markers and polylines.",
+                     description_msgid="help_fit_bounds",
+                     i18n_domain="googlemaps",
+                     ),
+                 ),
     ),)
 gmap_schema = getattr(ATFolder, 'schema', Schema(())).copy() + schema.copy()
 finalizeATCTSchema(gmap_schema)
