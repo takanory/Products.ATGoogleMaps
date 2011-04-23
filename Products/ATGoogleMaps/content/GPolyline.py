@@ -63,22 +63,22 @@ schema = Schema((
                ),
     FloatField('north',
                widget=ComputedWidget(
-                 label='North',
+                 visible={'vew': 'invisible', 'edit': 'hidden'},
                  )
                ),
     FloatField('east',
                widget=ComputedWidget(
-                 label='East',
+                 visible={'vew': 'invisible', 'edit': 'hidden'},
                  )
                ),
     FloatField('south',
                widget=ComputedWidget(
-                 label='South',
+                 visible={'vew': 'invisible', 'edit': 'hidden'},
                  )
                ),
     FloatField('west',
                widget=ComputedWidget(
-                 label='West',
+                 visible={'vew': 'invisible', 'edit': 'hidden'},
                  )
                ),
     ),)
