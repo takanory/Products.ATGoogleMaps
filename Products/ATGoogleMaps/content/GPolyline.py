@@ -61,6 +61,26 @@ schema = Schema((
                    i18n_domain='googlemaps',
                    )
                ),
+    FloatField('north',
+               widget=ComputedWidget(
+                 label='North',
+                 )
+               ),
+    FloatField('east',
+               widget=ComputedWidget(
+                 label='East',
+                 )
+               ),
+    FloatField('south',
+               widget=ComputedWidget(
+                 label='South',
+                 )
+               ),
+    FloatField('west',
+               widget=ComputedWidget(
+                 label='West',
+                 )
+               ),
     ),)
 gpolyline_schema = getattr(ATCTContent, 'schema', Schema(())).copy() + schema.copy()
 finalizeATCTSchema(gpolyline_schema)
@@ -75,7 +95,32 @@ class GPolyline(ATCTContent):
     
     meta_type = "GPolyline"
     _at_rename_after_creation = True
-    
+
+    # set bounds from coordinates
+    def setCoordinates(self, value, **kwargs):
+        field=self.getField('coordinates')
+        field.set(self,value,**kwargs)
+        north = -91.0
+        south = 91.0
+        east = -181.0
+        west = 181.0
+        for coordinate in self.coordinates:
+            lat, lng = coordinate.split(",")
+            lat = float(lat)
+            lng = float(lng)
+            if lat < south:
+                south = lat
+            if lat > north:
+                north = lat
+            if lng < west:
+                west = lng
+            if lng > east:
+                east = lng
+        self.setNorth(north)
+        self.setSouth(south)
+        self.setEast(east)
+        self.setWest(west)
+        
     # default point value from parent GMap center
     def getContainerCenter(self):
         latlng = {'latitude': '0.0', 'longitude': '0.0'}

@@ -3,6 +3,13 @@
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="googlemaps">
 
+<head>
+  <metal:block fill-slot="javascript_head_slot">
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+    <span tal:replace="structure context/gpolyline"/>
+  </metal:block>
+</head>
+
 <body>
 
 <metal:main fill-slot="main">
@@ -26,7 +33,8 @@
 
     <div tal:replace="structure provider:plone.abovecontentbody"/>
 
-    <img src="" tal:attributes="src context/getStaticMap"/>
+    <div id="map_canvas" style="height: 500px;">
+    </div>
 
     <div metal:use-macro="context/document_relateditems/macros/relatedItems">
       show related items if they exist
