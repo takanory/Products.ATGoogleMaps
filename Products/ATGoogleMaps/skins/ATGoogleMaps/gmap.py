@@ -7,6 +7,8 @@ def add_polylines(js, items):
             js.append('  var polyline_%d = createPolyline(map, "%s", %f, %d, "%s");'
                       % (index, polyline.color, polyline.opacity, polyline.weight, polyline.title))
             js.append('  polyline_%d.setPath(createPath(%s));' % (index, polyline.getCoordinatesArray()))
+            js.append('  bounds.extend(new google.maps.LatLng(%s, %s));' % (polyline.north, polyline.east))
+            js.append('  bounds.extend(new google.maps.LatLng(%s, %s));' % (polyline.south, polyline.west))
     
 def add_markers(js, items):
     for index in range(len(items)):
@@ -15,17 +17,21 @@ def add_markers(js, items):
         lng = marker.point['longitude']
         js.append('  var marker_%d = createMarker(map, %s, %s, "%d", "%s");'
                   % (index, lat, lng, index, marker.title))
+        js.append('  bounds.extend(new google.maps.LatLng(%s, %s));' % (lat, lng))
 
 # create initialize method
 def initialize_func(js):
     lat = context.center['latitude']
     lng = context.center['longitude']
     js.extend(('function initialize() {',
+               '  var bounds = new google.maps.LatLngBounds();',
                '  var map = createMap("map_canvas", %s, %s, %s, "%s", "%s", "%s");' % (lat, lng, context.zoom, context.mapType, context.mapTypeControl, context.navigationControl),
                ))
 
     add_markers(js, context.getFolderContents({'portal_type': 'GMarker'}))
     add_polylines(js, context.getFolderContents({'portal_type': 'GPolyline'}))
+    if context.fitBounds:
+        js.append('  map.fitBounds(bounds);')
 
     js.append('}')
     
