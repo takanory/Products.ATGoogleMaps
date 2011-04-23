@@ -1,15 +1,29 @@
 from Globals import InitializeClass
 from Products.validation import validation
-from Products.validation.interfaces.IValidator import IValidator
 from Products.CMFCore.utils import getToolByName
 from zope.interface import implements
+
+try:
+    # Plone 4 and higher
+    import plone.app.upgrade
+    USE_BBB_VALIDATORS = False
+except ImportError:
+    # BBB Plone 3
+    USE_BBB_VALIDATORS = True
+if USE_BBB_VALIDATORS:
+    from Products.validation.interfaces import ivalidator
+else:
+    from Products.validation.interfaces.IValidator import IValidator
 
 class LatLngValidator:
     """
     Latitude and Longitude validator. To be used with LatLngField.
     """
 
-    implements(IValidator)
+    if USE_BBB_VALIDATORS:
+        __implements__ = (ivalidator,)
+    else:
+        implements(IValidator)
 
     def __init__(self, name, title='', description=''):
         self.name = name
