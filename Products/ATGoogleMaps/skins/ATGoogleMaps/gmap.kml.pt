@@ -1,27 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kml xmlns="http://earth.google.com/kml/2.2"
+     xmlns:gx="http://www.google.com/kml/ext/2.2"
      xmlns:tal="http://xml.zope.org/namespaces/tal"
      xmlns:metal="http://xml.zope.org/namespaces/metal">
-<tal:dummy tal:define="dummy python:request.RESPONSE.setHeader('Content-Type', 'application/vnd.google-earth.kml;; charset=utf-8')" />
+<tal:dummy tal:define="dummy python:request.RESPONSE.setHeader('Content-Type', 'application/vnd.google-earth.kml+xml;; charset=utf-8')" />
 <Document>
-  <name tal:content="context/pretty_title_or_id">Document title</name>
+<name tal:content="context/pretty_title_or_id">Document title</name>
   <description tal:content="context/description">Description</description>
   <LookAt>
     <longitude tal:content="context/center/longitude">139.71</longitude>
     <latitude tal:content="context/center/latitude">35.73</latitude>
   </LookAt>
-  <tal:marker tal:repeat="item context/getFolderContents">
+  <tal:marker tal:repeat="item python:context.getFolderContents({'portal_type': 'GMarker'})">
     <Placemark tal:define="marker item/getObject">
       <name tal:content="item/pretty_title_or_id">Marker title</name>
       <address tal:content="marker/address">Address</address>
       <phoneNumber tal:content="marker/phone">03-1111-1111</phoneNumber>
       <Snippet tal:content="marker/Description">Snippet</Snippet>
-      <description tal:content="structure marker/infowindow">
-      </description>
+      <description tal:content="structure marker/infowindow">Description</description>
       <Point>
 	<coordinates tal:content="string:${marker/point/longitude},${marker/point/latitude}">139.71,35.73</coordinates>
       </Point>
     </Placemark>
   </tal:marker>
+  <tal:polylines tal:repeat="item python:context.getFolderContents({'portal_type': 'GPolyline'})">
+    <tal:polyline tal:define="polyline item/getObject">
+      <Style id="styleUrl">
+	<LineStyle>
+          <color tal:content="polyline/getKMLColor">7f00ffff</color>
+          <width tal:content="polyline/weight">4</width>
+	</LineStyle>
+      </Style>
+      <Placemark>
+	<name tal:content="item/pretty_title_or_id">Polyline title</name>
+	<description tal:content="item/Description">Description</description>
+	<styleUrl>#styleUrl</styleUrl>
+	<LineString>
+	  <coordinates tal:content="polyline/getKMLCoordinates">
+	  </coordinates>
+	</LineString>
+      </Placemark>
+    </tal:polyline>
+  </tal:polylines>
 </Document>
 </kml>

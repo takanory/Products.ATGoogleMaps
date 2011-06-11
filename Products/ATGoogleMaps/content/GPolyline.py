@@ -138,6 +138,19 @@ class GPolyline(ATCTContent):
         coordinates_array = coordinates_array[:-1] + "]"
         return coordinates_array
 
+    # return coordinates array string
+    def getKMLCoordinates(self):
+        kml_coordinates = ""
+        for coordinate in self.coordinates:
+            (lat, lng) = coordinate.split(",")
+            kml_coordinates += "%s,%s " % (lng, lat)
+        return kml_coordinates
+
+    def getKMLColor(self):
+        self.color
+        a_value = (int)(self.opacity * 255)
+        return "%02x%s%s%s" % (a_value, self.color[5:7], self.color[3:5], self.color[1:3])
+
     def getStaticMap(self):
         '''
         get Google Static Map URL
