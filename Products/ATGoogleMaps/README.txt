@@ -1,56 +1,30 @@
+.. contents::
+
 Introduction
 ============
+This product provides maps, marker and polyline content for Plone from Archetypes.
 
-This is a full-blown functional test. The emphasis here is on testing what
-the user may input and see, and the system is largely tested as a black box.
-We use PloneTestCase to set up this test as well, so we have a full Plone site
-to play with. We *can* inspect the state of the portal, e.g. using 
-self.portal and self.folder, but it is often frowned upon since you are not
-treating the system as a black box. Also, if you, for example, log in or set
-roles using calls like self.setRoles(), these are not reflected in the test
-browser, which runs as a separate session.
+See example maps at http://takanory.net/plone/develop/atgooglemaps/sample/.
 
-Being a doctest, we can tell a story here.
+Dependencies
+============
+- Plone: Plone 3.3+
 
-First, we must perform some setup. We use the testbrowser that is shipped
-with Five, as this provides proper Zope 2 integration. Most of the 
-documentation, though, is in the underlying zope.testbrower package.
+Installation
+============
+buildout
+--------
+- Just add Products.ATGoogleMaps to the eggs section of your buildout configuration and run buildout.::
 
-    >>> from Products.Five.testbrowser import Browser
-    >>> browser = Browser()
-    >>> portal_url = self.portal.absolute_url()
+  eggs =
+      ..
+      Products.ATGoogleMaps
 
-The following is useful when writing and debugging testbrowser tests. It lets
-us see all error messages in the error_log.
+- Restart Zope.
+- Go to the Site Setup page in the Plone interface and click on the Add/Remove Products link. Choose ATGoogleMaps (check its checkbox) and click the Install button.
 
-    >>> self.portal.error_log._ignored_exceptions = ()
+Licence
+=======
+Distributed under the GPL v2.
 
-With that in place, we can go to the portal front page and log in. We will
-do this using the default user from PloneTestCase:
-
-    >>> from Products.PloneTestCase.setup import portal_owner, default_password
-
-    >>> browser.open(portal_url)
-
-We have the login portlet, so let's use that.
-
-    >>> browser.getControl(name='__ac_name').value = portal_owner
-    >>> browser.getControl(name='__ac_password').value = default_password
-    >>> browser.getControl(name='submit').click()
-
-Here, we set the value of the fields on the login form and then simulate a
-submit click.
-
-We then test that we are still on the portal front page:
-
-    >>> browser.url == portal_url
-    True
-
-And we ensure that we get the friendly logged-in message:
-
-    >>> "You are now logged in" in browser.contents
-    True
-
-
--*- extra stuff goes here -*-
-
+See LICENSE.txt and LICENSE.GPL for details.
