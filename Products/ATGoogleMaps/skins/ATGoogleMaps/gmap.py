@@ -28,9 +28,12 @@ def initialize_func(js):
                '  var map = createMap("map_canvas", %s, %s, %s, "%s", "%s", "%s");' % (lat, lng, context.zoom, context.mapType, context.mapTypeControl, context.navigationControl),
                ))
 
-    add_markers(js, context.getFolderContents({'portal_type': 'GMarker'}))
-    add_polylines(js, context.getFolderContents({'portal_type': 'GPolyline'}))
-    if context.fitBounds:
+    markers = context.getFolderContents({'portal_type': 'GMarker'})
+    polylines = context.getFolderContents({'portal_type': 'GPolyline'})
+    add_markers(js, markers)
+    add_polylines(js, polylines)
+    
+    if context.fitBounds and len(markers) >= 2 or len(polylines) >= 1:
         js.append('  map.fitBounds(bounds);')
 
     js.append('}')
