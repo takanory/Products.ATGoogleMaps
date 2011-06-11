@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.7 (2011-06-11)
+----------------
+- Added Plone 4 support
+- Added fitBounds function to GMap
+- Added Polyline content type
+- Added Polyline support in KML
+
 0.6 (2010-03-24)
 ----------------
 - Created recipe with ZopeSkel [Manabu Terada]
