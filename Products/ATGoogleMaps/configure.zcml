@@ -2,11 +2,10 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:five="http://namespaces.zope.org/five"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-	xmlns:cmf="http://namespaces.zope.org/cmf"
-    i18n_domain="Products.ATGoogleMaps">
+    xmlns:cmf="http://namespaces.zope.org/cmf"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    i18n_domain="atgooglemaps">
 
-  <!-- <include package="Products.GenericSetup" file="meta.zcml" /> -->
-  
   <!-- <five:registerPackage package="." initialize=".initialize" /> -->
 
   <!-- Include the sub-packages that use their own configure.zcml files. -->
@@ -15,16 +14,15 @@
   <include package=".portlets" />
   
   <cmf:registerDirectory name="ATGoogleMaps" />
+  <!--<i18n:registerTranslations directory="locales"/>-->
 
   <!-- Register the installation GenericSetup extension profile -->
   <genericsetup:registerProfile
       name="default"
-      title="ATGoogleMaps"
+      title="AT Google Maps"
       directory="profiles/default"
       description="ATContentTypes-based Google Maps v3 product for Plone."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
   
-  <!-- -*- extra stuff goes here -*- -->
-
 </configure>
