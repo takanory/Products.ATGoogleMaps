@@ -252,7 +252,7 @@ msgstr "Telefoon"
 #. Default: "Point"
 #: ./content/GMarker.py
 msgid "label_point"
-msgstr "Punt"
+msgstr "Geografische locatie"
 
 #. Default: "Points"
 #: ./content/GPolyline.py
