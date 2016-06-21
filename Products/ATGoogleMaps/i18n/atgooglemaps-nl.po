@@ -1,0 +1,296 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"POT-Creation-Date: 2010-04-06 21:52+0900\n"
+"PO-Revision-Date: 2011-11-25 09:40+0000\n"
+"Last-Translator: Kim Chee Leong <leong@gw20e.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Language-Code: nl\n"
+"Language-Name: Nederlands\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: googlemaps\n"
+
+#. Default: "Android"
+#: ./content/GMap.py
+msgid "Android"
+msgstr ""
+
+#. Default: "Default"
+#: ./content/GMap.py
+msgid "Default"
+msgstr "Standaard"
+
+#. Default: "Dropdown menu"
+#: ./content/GMap.py
+msgid "Dropdown menu"
+msgstr "Keuzemenu"
+
+#. Default: "Horizontal bar"
+#: ./content/GMap.py
+msgid "Horizontal bar"
+msgstr "Horizontale lijn"
+
+#. Default: "Map"
+#: ./content/GMap.py
+msgid "Map"
+msgstr ""
+
+#. Default: "Map+Satellite"
+#: ./content/GMap.py
+msgid "Map+Satellite"
+msgstr "Map en satelliet"
+
+#. Default: "Satellite"
+#: ./content/GMap.py
+msgid "Satellite"
+msgstr "Satelliet"
+
+#. Default: "Small"
+#: ./content/GMap.py
+msgid "Small"
+msgstr "Klein"
+
+#. Default: "Terrain"
+#: ./content/GMap.py
+msgid "Terrain"
+msgstr "Terrein"
+
+#. Default: "Zoom and Pan"
+#: ./content/GMap.py
+msgid "Zoom and Pan"
+msgstr ""
+
+#. Default: ""
+#: ./content/GMarker.py
+msgid "help_address"
+msgstr ""
+
+#. Default: "Center of this map."
+#: ./content/GMap.py
+msgid "help_center"
+msgstr "Middenpunt van deze kaart"
+
+#. Default: "Enter the color in hexadecimal numeric HTML style, i.e. #RRGGBB."
+#: ./content/GPolyline.py
+msgid "help_color"
+msgstr "Vul de kleur in HTML hex code in. bv #RRGGBB"
+
+#. Default: "Set stroke coordinates."
+#: ./content/GPolyline.py
+msgid "help_coordinates"
+msgstr "Stel lijn coordinaten in "
+
+#. Default: ""
+#: ./content/GMarker.py
+msgid "help_detail"
+msgstr ""
+
+#. Default: "Height(pixel) of this map."
+#: ./content/GMap.py
+msgid "help_height"
+msgstr "Hoogte (in pixels) van deze kaart"
+
+#. Default: ""
+#: ./content/GMarker.py
+msgid "help_image_url"
+msgstr ""
+
+#. Default: "Input an address or a landmark and can search it. A latitude and longitude in the position of the marker is set. Drag a marker and can move it."
+#: ./skins/googlemaps/latlng_widget.py
+msgid "help_latlng_map"
+msgstr "Gebruik de marker om een locatie te selecteren. Voer in het zoekveld een adres, plaatsnaam of locatienaam in om ernaar te zoeken."
+
+#. Default: "Select a default map type."
+#: ./content/GMap.py
+msgid "help_map_type"
+msgstr "Selecteer een kaart-type"
+
+#. Default: "Select a default map type."
+#: ./content/GMap.py
+msgid "help_map_type_control"
+msgstr "Selecteer een kaart-type"
+
+#. Default: "Select navigation control type."
+#: ./content/GMap.py
+msgid "help_navigation_control"
+msgstr "Selecteer een navigatie methode"
+
+#. Default: "Enter stroke opacity between 0.0 and 1.0."
+#: ./content/GPolyline.py
+msgid "help_opacity"
+msgstr "Voer lijn doorzichtigheid in. Dit is een getal tussen de 0.0 en 1.0."
+
+#. Default: ""
+#: ./content/GMarker.py
+msgid "help_phone"
+msgstr ""
+
+#. Default: "Point of this marker."
+#: ./content/GMarker.py
+msgid "help_point"
+msgstr "Locatie van de marker"
+
+#. Default: "Creates a polyline from an array of points."
+#: ./content/GPolyline.py
+msgid "help_points"
+msgstr "Maak een polylijn van een lijst met punten."
+
+#. Default: ""
+#: ./content/GMarker.py
+msgid "help_street_view"
+msgstr ""
+
+#. Default: ""
+#: ./content/GMarker.py
+msgid "help_tab1"
+msgstr ""
+
+#. Default: ""
+#: ./content/GMarker.py
+msgid "help_tab2"
+msgstr ""
+
+#. Default: ""
+#: ./content/GMarker.py
+msgid "help_url"
+msgstr ""
+
+#. Default: "Enter stroke weight in pixels."
+#: ./content/GPolyline.py
+msgid "help_weight"
+msgstr "Geef de lijn dikte op (in pixels)"
+
+#. Default: "Select a zoom level."
+#: ./content/GMap.py
+msgid "help_zoom"
+msgstr "Selecteer een zoom-level"
+
+#. Default: "nondisplay"
+#: ./content/GMap.py
+msgid "hide"
+msgstr "verberg"
+
+#. Default: "Address"
+#: ./content/GMarker.py
+msgid "label_address"
+msgstr "Adres"
+
+#. Default: "Center"
+#: ./content/GMap.py
+msgid "label_center"
+msgstr "Middenpunt"
+
+#. Default: "Color"
+#: ./content/GPolyline.py
+msgid "label_color"
+msgstr "Kleur"
+
+#. Default: "Coordinates"
+#: ./content/GPolyline.py
+msgid "label_coordinates"
+msgstr "coordinaten"
+
+#. Default: "Detail"
+#: ./content/GMarker.py
+msgid "label_detail"
+msgstr ""
+
+#. Default: "Height"
+#: ./content/GMap.py
+msgid "label_height"
+msgstr "Hoogte"
+
+#. Default: "Image URL"
+#: ./content/GMarker.py
+msgid "label_image_url"
+msgstr "Afbeeldings url"
+
+#. Default: "View larger map"
+#: ./skins/googlemaps/gmarker_view.pt
+msgid "label_larger_map"
+msgstr "Toon grotere map"
+
+#. Default: "Latitude"
+#: ./skins/googlemaps/latlng_widget.py
+msgid "label_latitude"
+msgstr "Lengtegraad"
+
+#. Default: "Longitude"
+#: ./skins/googlemaps/latlng_widget.py
+msgid "label_longitude"
+msgstr "Breedtegraad"
+
+#. Default: "Map Type"
+#: ./content/GMap.py
+msgid "label_map_type"
+msgstr "Kaart-type"
+
+#. Default: "Map Type Control"
+#: ./content/GMap.py
+msgid "label_map_type_control"
+msgstr "Map type controle"
+
+#. Default: "Navigation Control"
+#: ./content/GMap.py
+msgid "label_navigation_control"
+msgstr "Navigatie controle"
+
+#. Default: "Opacity"
+#: ./content/GPolyline.py
+msgid "label_opacity"
+msgstr "Doorzichtigheid"
+
+#. Default: "Phone"
+#: ./content/GMarker.py
+msgid "label_phone"
+msgstr "Telefoon"
+
+#. Default: "Point"
+#: ./content/GMarker.py
+msgid "label_point"
+msgstr "Geografische locatie"
+
+#. Default: "Points"
+#: ./content/GPolyline.py
+msgid "label_points"
+msgstr "Punten"
+
+#. Default: "Display Street View"
+#: ./content/GMarker.py
+msgid "label_street_view"
+msgstr "Toon Street View"
+
+#. Default: "Tab #1 title"
+#: ./content/GMarker.py
+msgid "label_tab1"
+msgstr ""
+
+#. Default: "Tab #2 title"
+#: ./content/GMarker.py
+msgid "label_tab2"
+msgstr ""
+
+#. Default: "URL"
+#: ./content/GMarker.py
+msgid "label_url"
+msgstr ""
+
+#. Default: "Weight"
+#: ./content/GPolyline.py
+msgid "label_weight"
+msgstr "Gewicht"
+
+#. Default: "Zoom"
+#: ./content/GMap.py
+msgid "label_zoom"
+msgstr ""
+
+#. Default: "View in Google Earth"
+#: ./skins/googlemaps/gmap_view.pt
+msgid "view_google_earth"
+msgstr "Toon in Google Earth"
+

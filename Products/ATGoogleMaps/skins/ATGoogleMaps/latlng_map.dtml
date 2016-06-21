@@ -18,6 +18,22 @@ function initialize() {
     document.edit_form["<dtml-var fieldName>.latitude:record:ignore_empty"].value = marker.getPosition().lat();
     document.edit_form["<dtml-var fieldName>.longitude:record:ignore_empty"].value = marker.getPosition().lng();
   });
+
+  // no form submit when an enter is given in search field
+  jq('input#q').keypress(function(e){
+    if(e.which == 13){
+      e.preventDefault();
+      geocode();
+    }
+  });
+
+  // hide zoom, zoom level is automatically saved
+  jq("#archetypes-fieldname-zoom").hide();
+
+  // save zoomlevel at GMap content type on submit
+  jq('form').submit(function(e){
+    jq("#zoom").val(map.getZoom());
+  });
 }
 google.maps.event.addDomListener(window, 'load', initialize);
 

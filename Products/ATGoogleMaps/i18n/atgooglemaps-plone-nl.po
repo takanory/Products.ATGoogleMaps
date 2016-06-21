@@ -1,0 +1,61 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"POT-Creation-Date: 2010-04-06 21:52+0900\n"
+"PO-Revision-Date: 2011-11-25 09:40+0000\n"
+"Last-Translator: Kim Chee Leong <leong@gw20e.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Language-Code: nl\n"
+"Language-Name: Nederlands\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: plone\n"
+
+#. Default: "A map uses Google Maps JavaScript API V3."
+#: ./profiles/default/types/GMap.xml
+msgid "A map uses Google Maps JavaScript API V3."
+msgstr "Een map gebruikt Google Maps javascript API V3"
+
+#. Default: "A marker displays it on a map with infowindow."
+#: ./profiles/default/types/GMarker.xml
+msgid "A marker displays it on a map with infowindow."
+msgstr "Een marker wordt getoond op een map."
+
+#. Default: "A polygon displayis it on a map."
+#: ./profiles/default/types/GPolygon.xml
+msgid "A polygon displayis it on a map."
+msgstr "Een polygoon wordt getoond op een map"
+
+#. Default: "A polyline displayis it on a map."
+#: ./profiles/default/types/GPolyline.xml
+msgid "A polyline displayis it on a map."
+msgstr ""
+
+#. Default: "Map"
+#: ./profiles/default/types/GMap.xml
+msgid "Map"
+msgstr ""
+
+#. Default: "Marker"
+#: ./profiles/default/types/GMarker.xml
+msgid "Marker"
+msgstr ""
+
+#. Default: "Polygon"
+#: ./content/GPolygon.py
+msgid "Polygon"
+msgstr "Polygoon"
+
+#. Default: "Polyline"
+#: ./profiles/default/types/GPolyline.xml
+msgid "Polyline"
+msgstr "Polylijn"
+
+#. Default: "Control"
+#: ./content/GMap.py
+msgid "label_schema_control"
+msgstr ""
+
